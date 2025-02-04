@@ -1,0 +1,48 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.streets-and-alleys {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: min(1.5vw, 1.5vh);
+  grid-row-gap: min(1.5vw, 1.5vh);
+  padding: min(1.5vw, 1.5vh);
+}
+
+.row {
+  overflow: scroll;
+}
+
+.row.left .card {
+  float: right;
+}
+.row.left .card:not(:first-child) {
+  margin-right: max(-11vw, -11vh);
+}
+.row.left .card.tight-stack {
+  margin-right: max(-14.5vw, -14.5vh);
+}
+
+.row.right .card {
+  float: left;
+}
+.row.right .card:not(:first-child) {
+  margin-left: max(-11vw, -11vh);
+}
+.row.right .card.tight-stack {
+  margin-left: max(-14.5vw, -14.5vh);
+}
