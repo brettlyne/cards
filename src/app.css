@@ -6,6 +6,7 @@
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  background: url("bg.jpg") repeat;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,25 +25,20 @@
 }
 
 .row {
-  overflow: scroll;
+  --col-width: min(2.5vw, 3.5vh);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, var(--col-width)));
+  overflow: auto;
+  grid-auto-flow: column;
+  justify-items: start;
+}
+.row:has(> :nth-child(10)) {
+  --col-width: min(2.2vw, 3.2vh);
+}
+.row:has(> :nth-child(14)) {
+  --col-width: min(1.8vw, 2.8vh);
 }
 
-.row.left .card {
-  float: right;
-}
-.row.left .card:not(:first-child) {
-  margin-right: max(-11vw, -11vh);
-}
-.row.left .card.tight-stack {
-  margin-right: max(-14.5vw, -14.5vh);
-}
-
-.row.right .card {
-  float: left;
-}
-.row.right .card:not(:first-child) {
-  margin-left: max(-11vw, -11vh);
-}
-.row.right .card.tight-stack {
-  margin-left: max(-14.5vw, -14.5vh);
+.row.left {
+  direction: rtl;
 }
