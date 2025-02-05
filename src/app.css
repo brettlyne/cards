@@ -1,4 +1,9 @@
 :root {
+  --card-bg: white;
+  --card-primary: black;
+  --card-secondary: red;
+  --card-accent: lime;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -31,6 +36,7 @@
   overflow: auto;
   grid-auto-flow: column;
   justify-items: start;
+  font-size: 0;
 }
 .row:has(> :nth-child(10)) {
   --col-width: min(2.2vw, 3.2vh);
@@ -41,4 +47,8 @@
 
 .row.left {
   direction: rtl;
+}
+
+.card-wrapper > svg {
+  max-height: 100%;
 }
