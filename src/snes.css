@@ -1,0 +1,3410 @@
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./scss/snes.scss ***!
+  \*******************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap);
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./scss/snes.scss (1) ***!
+  \***********************************************************************************************************************************************************************************/
+
+/*!
+ * SNES.css v0.0.1 (https://github.com/devMiguelCarrero/snes.css)
+ * A retro-themed CSS framework inspired by the aesthetics of 16bit consoles.
+ * Created by devMiguelCarrero
+ * Licensed under MIT (https://github.com/devMiguelCarrero/snes.css/blob/master/LICENSE)
+ */
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+:root {
+  --border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAACXBIWXMAAA7EAAAOxAGVKw4bAAA4JGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS41LWMwMjEgNzkuMTU1NzcyLCAyMDE0LzAxLzEzLTE5OjQ0OjAwICAgICAgICAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgICAgICAgICAgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIgogICAgICAgICAgICB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIKICAgICAgICAgICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIj4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBQaG90b3Nob3AgQ0MgMjAxNCAoV2luZG93cyk8L3htcDpDcmVhdG9yVG9vbD4KICAgICAgICAgPHhtcDpDcmVhdGVEYXRlPjIwMjQtMDEtMjhUMTk6Mzg6NDUtMDU6MDA8L3htcDpDcmVhdGVEYXRlPgogICAgICAgICA8eG1wOk1vZGlmeURhdGU+MjAyNC0wMS0yOFQyMDowNjo1Mi0wNTowMDwveG1wOk1vZGlmeURhdGU+CiAgICAgICAgIDx4bXA6TWV0YWRhdGFEYXRlPjIwMjQtMDEtMjhUMjA6MDY6NTItMDU6MDA8L3htcDpNZXRhZGF0YURhdGU+CiAgICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2UvcG5nPC9kYzpmb3JtYXQ+CiAgICAgICAgIDxwaG90b3Nob3A6Q29sb3JNb2RlPjI8L3Bob3Rvc2hvcDpDb2xvck1vZGU+CiAgICAgICAgIDx4bXBNTTpJbnN0YW5jZUlEPnhtcC5paWQ6MzExYjY5MGQtNGYzNy01MDQ1LThmYWUtZTFiNDc2MTExZDNlPC94bXBNTTpJbnN0YW5jZUlEPgogICAgICAgICA8eG1wTU06RG9jdW1lbnRJRD54bXAuZGlkOjMxMWI2OTBkLTRmMzctNTA0NS04ZmFlLWUxYjQ3NjExMWQzZTwveG1wTU06RG9jdW1lbnRJRD4KICAgICAgICAgPHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD54bXAuZGlkOjMxMWI2OTBkLTRmMzctNTA0NS04ZmFlLWUxYjQ3NjExMWQzZTwveG1wTU06T3JpZ2luYWxEb2N1bWVudElEPgogICAgICAgICA8eG1wTU06SGlzdG9yeT4KICAgICAgICAgICAgPHJkZjpTZXE+CiAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6YWN0aW9uPmNyZWF0ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDozMTFiNjkwZC00ZjM3LTUwNDUtOGZhZS1lMWI0NzYxMTFkM2U8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMjQtMDEtMjhUMTk6Mzg6NDUtMDU6MDA8L3N0RXZ0OndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE0IChXaW5kb3dzKTwvc3RFdnQ6c29mdHdhcmVBZ2VudD4KICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgIDwvcmRmOlNlcT4KICAgICAgICAgPC94bXBNTTpIaXN0b3J5PgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICAgICA8dGlmZjpYUmVzb2x1dGlvbj45NjAwMDAvMTAwMDA8L3RpZmY6WFJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOllSZXNvbHV0aW9uPjk2MDAwMC8xMDAwMDwvdGlmZjpZUmVzb2x1dGlvbj4KICAgICAgICAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MjwvdGlmZjpSZXNvbHV0aW9uVW5pdD4KICAgICAgICAgPGV4aWY6Q29sb3JTcGFjZT42NTUzNTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MzA8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MzA8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0idyI/Pp5QhtQAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAAwBQTFRFAAAAGBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwzw+4wAAAQB0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AFP3ByUAAAAxSURBVHjaYviPBBgZGRkZGZFFGAa9NLIEMnswS2N6BlnRYJYeumE+ZNM5AAAA//8DAJwZYttr8iGXAAAAAElFTkSuQmCC);
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+}
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+html,
+body {
+  max-width: 100vw;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  word-spacing: -0.3em;
+}
+@media (max-width: 992px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
+* {
+  font-family: "Press Start 2P", system-ui;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  margin: 0;
+  line-height: 1.5;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+p {
+  font-family: "Press Start 2P", system-ui;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  word-spacing: -0.3em;
+}
+@media (max-width: 992px) {
+  p {
+    font-size: 12px;
+  }
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+pre {
+  font-family: "Press Start 2P", system-ui;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  word-spacing: -0.3em;
+  white-space: pre-line;
+}
+@media (max-width: 992px) {
+  pre {
+    font-size: 12px;
+  }
+}
+pre code {
+  font-family: "Press Start 2P", system-ui;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  word-spacing: -0.3em;
+  white-space: pre-wrap;
+}
+@media (max-width: 992px) {
+  pre code {
+    font-size: 12px;
+  }
+}
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.snes-container {
+  position: relative;
+  padding: 48px;
+  background-color: transparent;
+  border: solid;
+  -o-border-image: var(--border-image);
+  border-image: var(--border-image);
+  border-image-slice: 12;
+  border-width: 12px;
+  border-image-outset: 6px;
+  border-image-repeat: initial;
+}
+.snes-container::before,
+.snes-container::after {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: 0;
+  width: calc(100% + 6px * 3);
+  height: calc(6px * 3);
+}
+.snes-container::before {
+  background-color: rgba(0, 0, 0, 0.2);
+  left: calc(0% - 6px);
+  top: calc(100% - (6px));
+  -webkit-clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+}
+.snes-container::after {
+  background-color: rgba(255, 255, 255, 0.3);
+  right: calc(0% - 6px);
+  bottom: calc(100% - (6px));
+  transform: rotate(0.5turn);
+  -webkit-clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+}
+.snes-container:not(:disabled):hover::before {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.snes-container:not(:disabled):hover::after {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.snes-container:disabled::before {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.snes-container:disabled::after {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.snes-container.has-white-bg {
+  background-color: #fff;
+}
+.snes-container.has-grey-bg {
+  background-color: #e5e5e5;
+}
+.snes-container.has-aged-yellow-bg {
+  background-color: #fcf4d9;
+}
+.snes-container.has-secondary-purple-bg {
+  background-color: #f0e4ff;
+}
+.snes-container.has-soft-green-bg {
+  background-color: #e2f4ea;
+}
+@media screen and (max-width: 992px) {
+  .snes-container {
+    padding: 8px;
+  }
+}
+.snes-container > *:not(:last-child) {
+  margin-bottom: 32px;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.snes-container-title {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  word-spacing: -0.3em;
+}
+@media (max-width: 992px) {
+  .snes-container-title {
+    font-size: 18px;
+  }
+}
+.snes-container-title::after {
+  content: "";
+  width: 100%;
+  height: 6px;
+  background-color: #f22561;
+  position: absolute;
+  bottom: calc(0% - 6px);
+  left: 0;
+}
+.snes-container-title.has-plumber-underline::after {
+  background-color: #f22561;
+}
+.snes-container-title.has-nature-underline::after {
+  background-color: #4bb244;
+}
+.snes-container-title.has-sunshine-underline::after {
+  background-color: #f2c019;
+}
+.snes-container-title.has-ocean-underline::after {
+  background-color: #4eb6d9;
+}
+.snes-container-title.has-turquoise-underline::after {
+  background-color: #40e0d0;
+}
+.snes-container-title.has-phantom-underline::after {
+  background-color: #9b5de5;
+}
+.snes-container-title.has-rose-underline::after {
+  background-color: #f784b2;
+}
+.snes-container-title.has-galaxy-underline::after {
+  background-color: #5a7d9a;
+}
+.snes-container-title.has-ember-underline::after {
+  background-color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.snes-link {
+  position: relative;
+  cursor: pointer;
+}
+.snes-link::after {
+  content: "";
+  width: 0;
+  height: 0.2em;
+  background-color: #f22561;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transition: width 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
+.snes-link:hover::after {
+  width: 100%;
+}
+@media screen and (max-width: 992px) {
+  .snes-link::after {
+    width: 100%;
+  }
+}
+.snes-link.has-plumber-underline::after {
+  background-color: #f22561;
+}
+.snes-link.has-nature-underline::after {
+  background-color: #4bb244;
+}
+.snes-link.has-sunshine-underline::after {
+  background-color: #f2c019;
+}
+.snes-link.has-ocean-underline::after {
+  background-color: #4eb6d9;
+}
+.snes-link.has-turquoise-underline::after {
+  background-color: #40e0d0;
+}
+.snes-link.has-phantom-underline::after {
+  background-color: #9b5de5;
+}
+.snes-link.has-rose-underline::after {
+  background-color: #f784b2;
+}
+.snes-link.has-galaxy-underline::after {
+  background-color: #5a7d9a;
+}
+.snes-link.has-ember-underline::after {
+  background-color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.snes-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.snes-form-group label {
+  font-family: "Press Start 2P", system-ui;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  word-spacing: -0.3em;
+}
+@media (max-width: 992px) {
+  .snes-form-group label {
+    font-size: 11px;
+  }
+}
+.snes-form-group:has(input[type="radio"]) {
+  gap: 20px;
+}
+.snes-form-group:has(input[type="range"]) {
+  gap: 24px;
+}
+.snes-input {
+  position: relative;
+  display: flex;
+  color: #fff;
+  border: solid;
+  -o-border-image: var(--border-image);
+  border-image: var(--border-image);
+  border-image-slice: 12;
+  border-width: 12px;
+  border-image-outset: 6px;
+  border-image-repeat: initial;
+  background-color: #fff;
+}
+.snes-input input,
+.snes-input select,
+.snes-input textarea {
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #2c3e50;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  word-spacing: -0.3em;
+  background-color: transparent;
+}
+@media (max-width: 992px) {
+  .snes-input input,
+  .snes-input select,
+  .snes-input textarea {
+    font-size: 12px;
+    word-spacing: -0.65em;
+  }
+}
+.snes-input input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+.snes-input select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.snes-input select option {
+  background-color: #fff;
+  padding: 8px;
+}
+.snes-input::before {
+  content: "";
+  position: absolute;
+  color: #f22561;
+  z-index: 10;
+}
+.snes-input.is-success {
+  background-color: #aedcab;
+  color: #4bb244;
+}
+.snes-input.is-warning {
+  background-color: #f9e398;
+  color: #f2c019;
+}
+.snes-input.is-error {
+  background-color: #f99db8;
+  color: #f22561;
+}
+.snes-input:has(select)::before {
+  color: #9b5de5;
+  right: calc(0% + 15 * 1.3333333333px);
+  top: calc(50% - 11 * 2px);
+  margin: 9px 13px;
+  content: "";
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 2px #000000, 4px 2px #000000, 26px 2px #000000,
+    28px 2px #000000, 2px 4px #000000,
+    4px 4px color-mix(in srgb, currentColor, white 35%), 6px 4px #000000,
+    24px 4px #000000, 26px 4px color-mix(in srgb, currentColor, black 15%),
+    28px 4px #000000, 2px 6px #000000,
+    4px 6px color-mix(in srgb, currentColor, white 15%),
+    6px 6px color-mix(in srgb, currentColor, white 35%), 8px 6px #000000,
+    22px 6px #000000, 24px 6px color-mix(in srgb, currentColor, black 15%),
+    26px 6px currentColor, 28px 6px #000000, 2px 8px #000000,
+    4px 8px color-mix(in srgb, currentColor, white 15%),
+    6px 8px color-mix(in srgb, currentColor, white 15%),
+    8px 8px color-mix(in srgb, currentColor, white 35%), 10px 8px #000000,
+    20px 8px #000000, 22px 8px color-mix(in srgb, currentColor, black 15%),
+    24px 8px currentColor, 26px 8px currentColor, 28px 8px #000000,
+    2px 10px #000000, 4px 10px color-mix(in srgb, currentColor, black 10%),
+    6px 10px color-mix(in srgb, currentColor, white 15%),
+    8px 10px color-mix(in srgb, currentColor, white 15%),
+    10px 10px color-mix(in srgb, currentColor, white 35%), 12px 10px #000000,
+    18px 10px #000000, 20px 10px color-mix(in srgb, currentColor, black 15%),
+    22px 10px currentColor, 24px 10px currentColor,
+    26px 10px color-mix(in srgb, currentColor, black 35%), 28px 10px #000000,
+    4px 12px #000000, 6px 12px color-mix(in srgb, currentColor, black 10%),
+    8px 12px color-mix(in srgb, currentColor, white 15%),
+    10px 12px color-mix(in srgb, currentColor, white 15%),
+    12px 12px color-mix(in srgb, currentColor, white 35%), 14px 12px #000000,
+    16px 12px #000000, 18px 12px color-mix(in srgb, currentColor, black 15%),
+    20px 12px currentColor, 22px 12px currentColor,
+    24px 12px color-mix(in srgb, currentColor, black 35%), 26px 12px #000000,
+    6px 14px #000000, 8px 14px color-mix(in srgb, currentColor, black 10%),
+    10px 14px color-mix(in srgb, currentColor, white 15%),
+    12px 14px color-mix(in srgb, currentColor, white 15%),
+    14px 14px color-mix(in srgb, currentColor, white 35%),
+    16px 14px color-mix(in srgb, currentColor, black 15%),
+    18px 14px currentColor, 20px 14px currentColor,
+    22px 14px color-mix(in srgb, currentColor, black 35%), 24px 14px #000000,
+    8px 16px #000000, 10px 16px color-mix(in srgb, currentColor, black 10%),
+    12px 16px color-mix(in srgb, currentColor, white 15%),
+    14px 16px color-mix(in srgb, currentColor, white 15%),
+    16px 16px currentColor, 18px 16px currentColor,
+    20px 16px color-mix(in srgb, currentColor, black 35%), 22px 16px #000000,
+    10px 18px #000000, 12px 18px color-mix(in srgb, currentColor, black 10%),
+    14px 18px color-mix(in srgb, currentColor, white 15%),
+    16px 18px currentColor,
+    18px 18px color-mix(in srgb, currentColor, black 35%), 20px 18px #000000,
+    12px 20px #000000, 14px 20px color-mix(in srgb, currentColor, black 10%),
+    16px 20px color-mix(in srgb, currentColor, black 35%), 18px 20px #000000,
+    14px 22px #000000, 16px 22px #000000;
+}
+.snes-input:has(select).is-success::before {
+  color: #4bb244;
+}
+.snes-input:has(select).is-warning::before {
+  color: #f2c019;
+}
+.snes-input:has(select).is-error::before {
+  color: #f22561;
+}
+.snes-input:has(input, textarea).is-error::before {
+  right: calc(0% + 17 * 1.3333333333px);
+  top: calc(50% - 17 * 2px);
+  margin: 15px 15px;
+  content: "";
+  width: 2px;
+  height: 2px;
+  box-shadow: 12px 2px #000000, 14px 2px #000000, 16px 2px #000000,
+    18px 2px #000000, 20px 2px #000000, 22px 2px #000000, 24px 2px #000000,
+    8px 4px #000000, 10px 4px #000000,
+    12px 4px color-mix(in srgb, #f22561, white 55%),
+    14px 4px color-mix(in srgb, #f22561, white 55%),
+    16px 4px color-mix(in srgb, #f22561, white 55%),
+    18px 4px color-mix(in srgb, #f22561, white 55%), 20px 4px #f22561,
+    22px 4px color-mix(in srgb, #f22561, white 55%), 24px 4px #f22561,
+    26px 4px #000000, 28px 4px #000000, 6px 6px #000000,
+    8px 6px color-mix(in srgb, #f22561, white 55%),
+    10px 6px color-mix(in srgb, #f22561, white 55%), 12px 6px #f22561,
+    14px 6px #f22561, 16px 6px #f22561, 18px 6px #f22561, 20px 6px #f22561,
+    22px 6px #f22561, 24px 6px #f22561, 26px 6px #f22561, 28px 6px #f22561,
+    30px 6px #000000, 4px 8px #000000,
+    6px 8px color-mix(in srgb, #f22561, white 55%), 8px 8px #f22561,
+    10px 8px #f22561, 12px 8px #f22561, 14px 8px #f22561, 16px 8px #f22561,
+    18px 8px #f22561, 20px 8px #f22561, 22px 8px #f22561, 24px 8px #f22561,
+    26px 8px #f22561, 28px 8px #f22561, 30px 8px #f22561, 32px 8px #000000,
+    4px 10px #000000, 6px 10px color-mix(in srgb, #f22561, white 55%),
+    8px 10px #f22561, 10px 10px #f22561, 12px 10px #f22561, 14px 10px #f22561,
+    16px 10px #f22561, 18px 10px #f22561, 20px 10px #f22561, 22px 10px #f22561,
+    24px 10px #f22561, 26px 10px #f22561, 28px 10px #f22561, 30px 10px #f22561,
+    32px 10px #000000, 2px 12px #000000,
+    4px 12px color-mix(in srgb, #f22561, white 55%), 6px 12px #f22561,
+    8px 12px #f22561, 10px 12px #ffffff, 12px 12px #ffffff, 14px 12px #ffffff,
+    16px 12px #f22561, 18px 12px #f22561, 20px 12px #f22561, 22px 12px #ffffff,
+    24px 12px #ffffff, 26px 12px #ffffff, 28px 12px #f22561, 30px 12px #f22561,
+    32px 12px #f22561, 34px 12px #000000, 2px 14px #000000,
+    4px 14px color-mix(in srgb, #f22561, white 55%), 6px 14px #f22561,
+    8px 14px #f22561, 10px 14px #f22561, 12px 14px #ffffff, 14px 14px #ffffff,
+    16px 14px #ffffff, 18px 14px #f22561, 20px 14px #ffffff, 22px 14px #ffffff,
+    24px 14px #ffffff, 26px 14px #f22561, 28px 14px #f22561, 30px 14px #f22561,
+    32px 14px color-mix(in srgb, #f22561, black 50%), 34px 14px #000000,
+    2px 16px #000000, 4px 16px color-mix(in srgb, #f22561, white 55%),
+    6px 16px #f22561, 8px 16px #f22561, 10px 16px #f22561, 12px 16px #f22561,
+    14px 16px #ffffff, 16px 16px #ffffff, 18px 16px #ffffff, 20px 16px #ffffff,
+    22px 16px #ffffff, 24px 16px #f22561, 26px 16px #f22561, 28px 16px #f22561,
+    30px 16px #f22561, 32px 16px #f22561, 34px 16px #000000, 2px 18px #000000,
+    4px 18px color-mix(in srgb, #f22561, white 55%), 6px 18px #f22561,
+    8px 18px #f22561, 10px 18px #f22561, 12px 18px #f22561, 14px 18px #f22561,
+    16px 18px #ffffff, 18px 18px #ffffff, 20px 18px #ffffff, 22px 18px #f22561,
+    24px 18px #f22561, 26px 18px #f22561, 28px 18px #f22561, 30px 18px #f22561,
+    32px 18px color-mix(in srgb, #f22561, black 50%), 34px 18px #000000,
+    2px 20px #000000, 4px 20px #f22561, 6px 20px #f22561, 8px 20px #f22561,
+    10px 20px #f22561, 12px 20px #f22561, 14px 20px #f22561, 16px 20px #ffffff,
+    18px 20px #ffffff, 20px 20px #ffffff, 22px 20px #f22561, 24px 20px #f22561,
+    26px 20px #f22561, 28px 20px #f22561, 30px 20px #f22561,
+    32px 20px color-mix(in srgb, #f22561, black 50%), 34px 20px #000000,
+    2px 22px #000000, 4px 22px color-mix(in srgb, #f22561, white 55%),
+    6px 22px #f22561, 8px 22px #f22561, 10px 22px #f22561, 12px 22px #f22561,
+    14px 22px #ffffff, 16px 22px #ffffff, 18px 22px #ffffff, 20px 22px #ffffff,
+    22px 22px #ffffff, 24px 22px #f22561, 26px 22px #f22561, 28px 22px #f22561,
+    30px 22px #f22561, 32px 22px color-mix(in srgb, #f22561, black 50%),
+    34px 22px #000000, 2px 24px #000000, 4px 24px #f22561, 6px 24px #f22561,
+    8px 24px #f22561, 10px 24px #f22561, 12px 24px #ffffff, 14px 24px #ffffff,
+    16px 24px #ffffff, 18px 24px #f22561, 20px 24px #ffffff, 22px 24px #ffffff,
+    24px 24px #ffffff, 26px 24px #f22561, 28px 24px #f22561, 30px 24px #f22561,
+    32px 24px color-mix(in srgb, #f22561, black 50%), 34px 24px #000000,
+    4px 26px #000000, 6px 26px #f22561, 8px 26px #f22561, 10px 26px #ffffff,
+    12px 26px #ffffff, 14px 26px #ffffff, 16px 26px #f22561, 18px 26px #f22561,
+    20px 26px #f22561, 22px 26px #ffffff, 24px 26px #ffffff, 26px 26px #ffffff,
+    28px 26px #f22561, 30px 26px color-mix(in srgb, #f22561, black 50%),
+    32px 26px #000000, 4px 28px #000000, 6px 28px #f22561, 8px 28px #f22561,
+    10px 28px #f22561, 12px 28px #f22561, 14px 28px #f22561, 16px 28px #f22561,
+    18px 28px #f22561, 20px 28px #f22561, 22px 28px #f22561, 24px 28px #f22561,
+    26px 28px #f22561, 28px 28px #f22561,
+    30px 28px color-mix(in srgb, #f22561, black 50%), 32px 28px #000000,
+    6px 30px #000000, 8px 30px #f22561, 10px 30px #f22561, 12px 30px #f22561,
+    14px 30px #f22561, 16px 30px #f22561, 18px 30px #f22561, 20px 30px #f22561,
+    22px 30px #f22561, 24px 30px #f22561,
+    26px 30px color-mix(in srgb, #f22561, black 50%),
+    28px 30px color-mix(in srgb, #f22561, black 50%), 30px 30px #000000,
+    8px 32px #000000, 10px 32px #000000, 12px 32px #f22561,
+    14px 32px color-mix(in srgb, #f22561, black 50%), 16px 32px #f22561,
+    18px 32px color-mix(in srgb, #f22561, black 50%),
+    20px 32px color-mix(in srgb, #f22561, black 50%),
+    22px 32px color-mix(in srgb, #f22561, black 50%),
+    24px 32px color-mix(in srgb, #f22561, black 50%), 26px 32px #000000,
+    28px 32px #000000, 12px 34px #000000, 14px 34px #000000, 16px 34px #000000,
+    18px 34px #000000, 20px 34px #000000, 22px 34px #000000, 24px 34px #000000;
+}
+.snes-input:has(input, textarea).is-success::before {
+  right: calc(0% + 17 * 1.3333333333px);
+  top: calc(50% - 17 * 2px);
+  margin: 15px 15px;
+  content: "";
+  width: 2px;
+  height: 2px;
+  box-shadow: 12px 2px #000000, 14px 2px #000000, 16px 2px #000000,
+    18px 2px #000000, 20px 2px #000000, 22px 2px #000000, 24px 2px #000000,
+    8px 4px #000000, 10px 4px #000000,
+    12px 4px color-mix(in srgb, #4bb244, white 55%),
+    14px 4px color-mix(in srgb, #4bb244, white 55%),
+    16px 4px color-mix(in srgb, #4bb244, white 55%),
+    18px 4px color-mix(in srgb, #4bb244, white 55%), 20px 4px #4bb244,
+    22px 4px color-mix(in srgb, #4bb244, white 55%), 24px 4px #4bb244,
+    26px 4px #000000, 28px 4px #000000, 6px 6px #000000,
+    8px 6px color-mix(in srgb, #4bb244, white 55%),
+    10px 6px color-mix(in srgb, #4bb244, white 55%), 12px 6px #4bb244,
+    14px 6px #4bb244, 16px 6px #4bb244, 18px 6px #4bb244, 20px 6px #4bb244,
+    22px 6px #4bb244, 24px 6px #4bb244, 26px 6px #4bb244, 28px 6px #4bb244,
+    30px 6px #000000, 4px 8px #000000,
+    6px 8px color-mix(in srgb, #4bb244, white 55%), 8px 8px #4bb244,
+    10px 8px #4bb244, 12px 8px #4bb244, 14px 8px #4bb244, 16px 8px #4bb244,
+    18px 8px #4bb244, 20px 8px #4bb244, 22px 8px #4bb244, 24px 8px #4bb244,
+    26px 8px #4bb244, 28px 8px #4bb244, 30px 8px #4bb244, 32px 8px #000000,
+    4px 10px #000000, 6px 10px color-mix(in srgb, #4bb244, white 55%),
+    8px 10px #4bb244, 10px 10px #4bb244, 12px 10px #4bb244, 14px 10px #4bb244,
+    16px 10px #4bb244, 18px 10px #4bb244, 20px 10px #4bb244, 22px 10px #4bb244,
+    24px 10px #4bb244, 26px 10px #4bb244, 28px 10px #4bb244, 30px 10px #4bb244,
+    32px 10px #000000, 2px 12px #000000,
+    4px 12px color-mix(in srgb, #4bb244, white 55%), 6px 12px #4bb244,
+    8px 12px #4bb244, 10px 12px #4bb244, 12px 12px #4bb244, 14px 12px #4bb244,
+    16px 12px #4bb244, 18px 12px #4bb244, 20px 12px #4bb244, 22px 12px #4bb244,
+    24px 12px #ffffff, 26px 12px #ffffff, 28px 12px #ffffff, 30px 12px #4bb244,
+    32px 12px #4bb244, 34px 12px #000000, 2px 14px #000000,
+    4px 14px color-mix(in srgb, #4bb244, white 55%), 6px 14px #4bb244,
+    8px 14px #4bb244, 10px 14px #4bb244, 12px 14px #4bb244, 14px 14px #4bb244,
+    16px 14px #4bb244, 18px 14px #4bb244, 20px 14px #4bb244, 22px 14px #ffffff,
+    24px 14px #ffffff, 26px 14px #ffffff, 28px 14px #ffffff, 30px 14px #4bb244,
+    32px 14px color-mix(in srgb, #4bb244, black 50%), 34px 14px #000000,
+    2px 16px #000000, 4px 16px color-mix(in srgb, #4bb244, white 55%),
+    6px 16px #4bb244, 8px 16px #ffffff, 10px 16px #ffffff, 12px 16px #4bb244,
+    14px 16px #4bb244, 16px 16px #4bb244, 18px 16px #4bb244, 20px 16px #ffffff,
+    22px 16px #ffffff, 24px 16px #ffffff, 26px 16px #ffffff, 28px 16px #4bb244,
+    30px 16px #4bb244, 32px 16px #4bb244, 34px 16px #000000, 2px 18px #000000,
+    4px 18px color-mix(in srgb, #4bb244, white 55%), 6px 18px #4bb244,
+    8px 18px #ffffff, 10px 18px #ffffff, 12px 18px #ffffff, 14px 18px #4bb244,
+    16px 18px #4bb244, 18px 18px #ffffff, 20px 18px #ffffff, 22px 18px #ffffff,
+    24px 18px #ffffff, 26px 18px #4bb244, 28px 18px #4bb244, 30px 18px #4bb244,
+    32px 18px color-mix(in srgb, #4bb244, black 50%), 34px 18px #000000,
+    2px 20px #000000, 4px 20px #4bb244, 6px 20px #4bb244, 8px 20px #ffffff,
+    10px 20px #ffffff, 12px 20px #ffffff, 14px 20px #ffffff, 16px 20px #ffffff,
+    18px 20px #ffffff, 20px 20px #ffffff, 22px 20px #ffffff, 24px 20px #4bb244,
+    26px 20px #4bb244, 28px 20px #4bb244, 30px 20px #4bb244,
+    32px 20px color-mix(in srgb, #4bb244, black 50%), 34px 20px #000000,
+    2px 22px #000000, 4px 22px color-mix(in srgb, #4bb244, white 55%),
+    6px 22px #4bb244, 8px 22px #4bb244, 10px 22px #ffffff, 12px 22px #ffffff,
+    14px 22px #ffffff, 16px 22px #ffffff, 18px 22px #ffffff, 20px 22px #ffffff,
+    22px 22px #4bb244, 24px 22px #4bb244, 26px 22px #4bb244, 28px 22px #4bb244,
+    30px 22px #4bb244, 32px 22px color-mix(in srgb, #4bb244, black 50%),
+    34px 22px #000000, 2px 24px #000000, 4px 24px #4bb244, 6px 24px #4bb244,
+    8px 24px #4bb244, 10px 24px #4bb244, 12px 24px #ffffff, 14px 24px #ffffff,
+    16px 24px #ffffff, 18px 24px #ffffff, 20px 24px #4bb244, 22px 24px #4bb244,
+    24px 24px #4bb244, 26px 24px #4bb244, 28px 24px #4bb244, 30px 24px #4bb244,
+    32px 24px color-mix(in srgb, #4bb244, black 50%), 34px 24px #000000,
+    4px 26px #000000, 6px 26px #4bb244, 8px 26px #4bb244, 10px 26px #4bb244,
+    12px 26px #4bb244, 14px 26px #ffffff, 16px 26px #ffffff, 18px 26px #4bb244,
+    20px 26px #4bb244, 22px 26px #4bb244, 24px 26px #4bb244, 26px 26px #4bb244,
+    28px 26px #4bb244, 30px 26px color-mix(in srgb, #4bb244, black 50%),
+    32px 26px #000000, 4px 28px #000000, 6px 28px #4bb244, 8px 28px #4bb244,
+    10px 28px #4bb244, 12px 28px #4bb244, 14px 28px #4bb244, 16px 28px #4bb244,
+    18px 28px #4bb244, 20px 28px #4bb244, 22px 28px #4bb244, 24px 28px #4bb244,
+    26px 28px #4bb244, 28px 28px #4bb244,
+    30px 28px color-mix(in srgb, #4bb244, black 50%), 32px 28px #000000,
+    6px 30px #000000, 8px 30px #4bb244, 10px 30px #4bb244, 12px 30px #4bb244,
+    14px 30px #4bb244, 16px 30px #4bb244, 18px 30px #4bb244, 20px 30px #4bb244,
+    22px 30px #4bb244, 24px 30px #4bb244,
+    26px 30px color-mix(in srgb, #4bb244, black 50%),
+    28px 30px color-mix(in srgb, #4bb244, black 50%), 30px 30px #000000,
+    8px 32px #000000, 10px 32px #000000, 12px 32px #4bb244,
+    14px 32px color-mix(in srgb, #4bb244, black 50%), 16px 32px #4bb244,
+    18px 32px color-mix(in srgb, #4bb244, black 50%),
+    20px 32px color-mix(in srgb, #4bb244, black 50%),
+    22px 32px color-mix(in srgb, #4bb244, black 50%),
+    24px 32px color-mix(in srgb, #4bb244, black 50%), 26px 32px #000000,
+    28px 32px #000000, 12px 34px #000000, 14px 34px #000000, 16px 34px #000000,
+    18px 34px #000000, 20px 34px #000000, 22px 34px #000000, 24px 34px #000000;
+}
+.snes-input:has(input, textarea).is-warning::before {
+  right: calc(0% + 16 * 1.3333333333px);
+  top: calc(50% - 16 * 2px);
+  margin: 14px 14px;
+  content: "";
+  width: 2px;
+  height: 2px;
+  box-shadow: 16px 2px #000000, 18px 2px #000000, 14px 4px #000000,
+    16px 4px color-mix(in srgb, #f2c019, white 55%), 18px 4px #ff6f00,
+    20px 4px #000000, 14px 6px #000000,
+    16px 6px color-mix(in srgb, #f2c019, white 55%), 18px 6px #ff6f00,
+    20px 6px #000000, 12px 8px #000000,
+    14px 8px color-mix(in srgb, #f2c019, white 55%), 16px 8px #f2c019,
+    18px 8px #f2c019, 20px 8px #ff6f00, 22px 8px #000000, 12px 10px #000000,
+    14px 10px color-mix(in srgb, #f2c019, white 55%), 16px 10px #f2c019,
+    18px 10px #f2c019, 20px 10px #ff6f00, 22px 10px #000000, 10px 12px #000000,
+    12px 12px color-mix(in srgb, #f2c019, white 55%), 14px 12px #f2c019,
+    16px 12px #000000, 18px 12px #000000, 20px 12px #f2c019, 22px 12px #ff6f00,
+    24px 12px #000000, 10px 14px #000000,
+    12px 14px color-mix(in srgb, #f2c019, white 55%), 14px 14px #f2c019,
+    16px 14px #000000, 18px 14px #000000, 20px 14px #f2c019, 22px 14px #ff6f00,
+    24px 14px #000000, 8px 16px #000000,
+    10px 16px color-mix(in srgb, #f2c019, white 55%), 12px 16px #f2c019,
+    14px 16px #f2c019, 16px 16px #000000, 18px 16px #000000, 20px 16px #f2c019,
+    22px 16px #f2c019, 24px 16px #ff6f00, 26px 16px #000000, 8px 18px #000000,
+    10px 18px color-mix(in srgb, #f2c019, white 55%), 12px 18px #f2c019,
+    14px 18px #f2c019, 16px 18px #000000, 18px 18px #000000, 20px 18px #f2c019,
+    22px 18px #f2c019, 24px 18px #ff6f00, 26px 18px #000000, 6px 20px #000000,
+    8px 20px color-mix(in srgb, #f2c019, white 55%), 10px 20px #f2c019,
+    12px 20px #f2c019, 14px 20px #f2c019, 16px 20px #000000, 18px 20px #000000,
+    20px 20px #f2c019, 22px 20px #f2c019, 24px 20px #f2c019, 26px 20px #ff6f00,
+    28px 20px #000000, 6px 22px #000000,
+    8px 22px color-mix(in srgb, #f2c019, white 55%), 10px 22px #f2c019,
+    12px 22px #f2c019, 14px 22px #f2c019, 16px 22px #000000, 18px 22px #000000,
+    20px 22px #f2c019, 22px 22px #f2c019, 24px 22px #f2c019, 26px 22px #ff6f00,
+    28px 22px #000000, 4px 24px #000000,
+    6px 24px color-mix(in srgb, #f2c019, white 55%), 8px 24px #f2c019,
+    10px 24px #f2c019, 12px 24px #f2c019, 14px 24px #f2c019, 16px 24px #f2c019,
+    18px 24px #f2c019, 20px 24px #f2c019, 22px 24px #f2c019, 24px 24px #f2c019,
+    26px 24px #f2c019, 28px 24px #ff6f00, 30px 24px #000000, 4px 26px #000000,
+    6px 26px color-mix(in srgb, #f2c019, white 55%), 8px 26px #f2c019,
+    10px 26px #f2c019, 12px 26px #f2c019, 14px 26px #f2c019, 16px 26px #000000,
+    18px 26px #000000, 20px 26px #f2c019, 22px 26px #f2c019, 24px 26px #f2c019,
+    26px 26px #f2c019, 28px 26px #ff6f00, 30px 26px #000000, 2px 28px #000000,
+    4px 28px color-mix(in srgb, #f2c019, white 55%), 6px 28px #f2c019,
+    8px 28px #f2c019, 10px 28px #f2c019, 12px 28px #f2c019, 14px 28px #f2c019,
+    16px 28px #000000, 18px 28px #000000, 20px 28px #f2c019, 22px 28px #f2c019,
+    24px 28px #f2c019, 26px 28px #f2c019, 28px 28px #f2c019, 30px 28px #ff6f00,
+    32px 28px #000000, 2px 30px #000000,
+    4px 30px color-mix(in srgb, #f2c019, white 55%), 6px 30px #f2c019,
+    8px 30px #f2c019, 10px 30px #f2c019, 12px 30px #f2c019, 14px 30px #f2c019,
+    16px 30px #f2c019, 18px 30px #f2c019, 20px 30px #f2c019, 22px 30px #f2c019,
+    24px 30px #ff6f00, 26px 30px #ff6f00, 28px 30px #ff6f00, 30px 30px #ff6f00,
+    32px 30px #000000, 4px 32px #000000, 6px 32px #000000, 8px 32px #000000,
+    10px 32px #000000, 12px 32px #000000, 14px 32px #000000, 16px 32px #000000,
+    18px 32px #000000, 20px 32px #000000, 22px 32px #000000, 24px 32px #000000,
+    26px 32px #000000, 28px 32px #000000, 30px 32px #000000;
+}
+.snes-input:has(input:disabled, select:disabled, textarea:disabled) {
+  background-color: #b5ced1;
+  cursor: not-allowed;
+}
+.snes-input:has(input:disabled, select:disabled, textarea:disabled) > * {
+  color: #566573;
+  cursor: not-allowed;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.snes-button {
+  position: relative;
+  background-color: #4bb244;
+  padding: 4px 18px;
+  cursor: pointer;
+  display: inline-block;
+  color: #2c3e50;
+  border: solid;
+  -o-border-image: var(--border-image);
+  border-image: var(--border-image);
+  border-image-slice: 12;
+  border-width: 12px;
+  border-image-outset: 6px;
+  border-image-repeat: initial;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 18px;
+  line-height: 0.6;
+  letter-spacing: 0.05em;
+  word-spacing: -0.3em;
+}
+@media (max-width: 992px) {
+  .snes-button {
+    font-size: 16px;
+  }
+}
+.snes-button.has-plumber-color {
+  background-color: #f22561;
+}
+.snes-button.has-nature-color {
+  background-color: #4bb244;
+}
+.snes-button.has-sunshine-color {
+  background-color: #f2c019;
+}
+.snes-button.has-ocean-color {
+  background-color: #4eb6d9;
+}
+.snes-button.has-turquoise-color {
+  background-color: #40e0d0;
+}
+.snes-button.has-phantom-color {
+  background-color: #9b5de5;
+}
+.snes-button.has-rose-color {
+  background-color: #f784b2;
+}
+.snes-button.has-galaxy-color {
+  background-color: #5a7d9a;
+}
+.snes-button.has-ember-color {
+  background-color: #ff6f00;
+}
+.snes-button::before,
+.snes-button::after {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: 0;
+  width: calc(100% + 6px * 3);
+  height: calc(6px * 3);
+}
+.snes-button::before {
+  background-color: rgba(0, 0, 0, 0.2);
+  left: calc(0% - 6px);
+  top: calc(100% - (6px));
+  -webkit-clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+}
+.snes-button::after {
+  background-color: rgba(255, 255, 255, 0.3);
+  right: calc(0% - 6px);
+  bottom: calc(100% - (6px));
+  transform: rotate(0.5turn);
+  -webkit-clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+}
+.snes-button:not(:disabled):hover::before {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.snes-button:not(:disabled):hover::after {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.snes-button:disabled::before {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.snes-button:disabled::after {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.snes-button:not(:disabled):active::before {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.snes-button:not(:disabled):active::after {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.snes-button:disabled {
+  color: #566573;
+  background-color: #b5ced1;
+  cursor: not-allowed;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.snes-list {
+  position: relative;
+  padding-inline-start: 32px;
+  list-style-type: none;
+}
+.snes-list li {
+  position: relative;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  word-spacing: -0.3em;
+  margin-bottom: 8px;
+}
+@media (max-width: 992px) {
+  .snes-list li {
+    font-size: 12px;
+  }
+}
+.snes-list li::before {
+  position: absolute;
+  left: -2.4em;
+  top: calc(-3em / 9);
+  color: #f22561;
+  margin: 0.42em 0.48em;
+  content: "";
+  width: 0.12em;
+  height: 0.12em;
+  box-shadow: 0.48em 0.12em #000000, 0.6em 0.12em #000000, 0.72em 0.12em #000000,
+    0.84em 0.12em #000000, 0.36em 0.24em #000000,
+    0.48em 0.24em color-mix(in srgb, currentColor, white 55%),
+    0.6em 0.24em color-mix(in srgb, currentColor, white 55%),
+    0.72em 0.24em color-mix(in srgb, currentColor, white 55%),
+    0.84em 0.24em color-mix(in srgb, currentColor, white 55%),
+    0.96em 0.24em #000000, 0.24em 0.36em #000000,
+    0.36em 0.36em color-mix(in srgb, currentColor, white 55%),
+    0.48em 0.36em #ffffff, 0.6em 0.36em currentColor, 0.72em 0.36em currentColor,
+    0.84em 0.36em currentColor,
+    0.96em 0.36em color-mix(in srgb, currentColor, white 55%),
+    1.08em 0.36em #000000, 0.12em 0.48em #000000,
+    0.24em 0.48em color-mix(in srgb, currentColor, white 55%),
+    0.36em 0.48em #ffffff, 0.48em 0.48em currentColor, 0.6em 0.48em currentColor,
+    0.72em 0.48em currentColor, 0.84em 0.48em currentColor,
+    0.96em 0.48em currentColor,
+    1.08em 0.48em color-mix(in srgb, currentColor, white 55%),
+    1.2em 0.48em #000000, 0.12em 0.6em #000000, 0.24em 0.6em currentColor,
+    0.36em 0.6em currentColor, 0.48em 0.6em currentColor,
+    0.6em 0.6em currentColor, 0.72em 0.6em currentColor,
+    0.84em 0.6em currentColor, 0.96em 0.6em currentColor,
+    1.08em 0.6em currentColor, 1.2em 0.6em #000000, 0.12em 0.72em #000000,
+    0.24em 0.72em color-mix(in srgb, currentColor, black 70%),
+    0.36em 0.72em currentColor, 0.48em 0.72em currentColor,
+    0.6em 0.72em currentColor, 0.72em 0.72em currentColor,
+    0.84em 0.72em currentColor, 0.96em 0.72em currentColor,
+    1.08em 0.72em color-mix(in srgb, currentColor, black 70%),
+    1.2em 0.72em #000000, 0.24em 0.84em #000000, 0.36em 0.84em currentColor,
+    0.48em 0.84em currentColor, 0.6em 0.84em currentColor,
+    0.72em 0.84em currentColor, 0.84em 0.84em currentColor,
+    0.96em 0.84em currentColor, 1.08em 0.84em #000000, 0.36em 0.96em #000000,
+    0.48em 0.96em color-mix(in srgb, currentColor, black 70%),
+    0.6em 0.96em color-mix(in srgb, currentColor, black 70%),
+    0.72em 0.96em color-mix(in srgb, currentColor, black 70%),
+    0.84em 0.96em color-mix(in srgb, currentColor, black 70%),
+    0.96em 0.96em #000000, 0.48em 1.08em #000000, 0.6em 1.08em #000000,
+    0.72em 1.08em #000000, 0.84em 1.08em #000000;
+}
+@media screen and (max-width: 992px) {
+  .snes-list {
+    padding-inline-start: 20px;
+  }
+}
+.snes-list.is-plumber-list-color li::before {
+  color: #f22561;
+}
+.snes-list.is-nature-list-color li::before {
+  color: #4bb244;
+}
+.snes-list.is-sunshine-list-color li::before {
+  color: #f2c019;
+}
+.snes-list.is-ocean-list-color li::before {
+  color: #4eb6d9;
+}
+.snes-list.is-turquoise-list-color li::before {
+  color: #40e0d0;
+}
+.snes-list.is-phantom-list-color li::before {
+  color: #9b5de5;
+}
+.snes-list.is-rose-list-color li::before {
+  color: #f784b2;
+}
+.snes-list.is-galaxy-list-color li::before {
+  color: #5a7d9a;
+}
+.snes-list.is-ember-list-color li::before {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.snes-range {
+  flex: 0;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 10px;
+  background: #f22561;
+  width: 100%;
+  padding: 0;
+  border: solid;
+  -o-border-image: var(--border-image);
+  border-image: var(--border-image);
+  border-image-slice: 12;
+  border-width: 12px;
+  border-image-outset: 6px;
+  border-image-repeat: initial;
+}
+.snes-range::before,
+.snes-range::after {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: 0;
+  width: calc(100% + 6px * 3);
+  height: calc(6px * 3);
+}
+.snes-range::before {
+  background-color: rgba(0, 0, 0, 0.2);
+  left: calc(0% - 6px);
+  top: calc(100% - (6px));
+  -webkit-clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+}
+.snes-range::after {
+  background-color: rgba(255, 255, 255, 0.3);
+  right: calc(0% - 6px);
+  bottom: calc(100% - (6px));
+  transform: rotate(0.5turn);
+  -webkit-clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+}
+.snes-range:not(:disabled):hover::before {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.snes-range:not(:disabled):hover::after {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.snes-range:disabled::before {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.snes-range:disabled::after {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.snes-range::-webkit-slider-runnable-track {
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  margin-left: calc(-6px * 3);
+  margin-right: calc(-6px * 3);
+}
+.snes-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  width: calc(40px + (800px) / 100);
+  height: 40px;
+  background-color: #fcf4d9;
+  cursor: grab;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: solid;
+  border-image: var(--border-image);
+  border-image-slice: 12;
+  border-width: 12px;
+  border-image-outset: 6px;
+  border-image-repeat: initial;
+  z-index: 5;
+}
+.snes-range::-webkit-slider-thumb:hover {
+  background-color: #e3dcc3;
+}
+.snes-range.has-white-thumb::-webkit-slider-thumb {
+  background-color: #fff;
+}
+.snes-range.has-white-thumb::-webkit-slider-thumb:hover {
+  background-color: #e6e6e6;
+}
+.snes-range.has-grey-thumb::-webkit-slider-thumb {
+  background-color: #e5e5e5;
+}
+.snes-range.has-grey-thumb::-webkit-slider-thumb:hover {
+  background-color: #cecece;
+}
+.snes-range.has-aged-yellow-thumb::-webkit-slider-thumb {
+  background-color: #fcf4d9;
+}
+.snes-range.has-aged-yellow-thumb::-webkit-slider-thumb:hover {
+  background-color: #e3dcc3;
+}
+.snes-range.has-secondary-purple-thumb::-webkit-slider-thumb {
+  background-color: #f0e4ff;
+}
+.snes-range.has-secondary-purple-thumb::-webkit-slider-thumb:hover {
+  background-color: #d8cde6;
+}
+.snes-range.has-soft-green-thumb::-webkit-slider-thumb {
+  background-color: #e2f4ea;
+}
+.snes-range.has-soft-green-thumb::-webkit-slider-thumb:hover {
+  background-color: #cbdcd3;
+}
+.snes-range.has-plumber-bg {
+  background: #f22561;
+}
+.snes-range.has-nature-bg {
+  background: #4bb244;
+}
+.snes-range.has-sunshine-bg {
+  background: #f2c019;
+}
+.snes-range.has-ocean-bg {
+  background: #4eb6d9;
+}
+.snes-range.has-turquoise-bg {
+  background: #40e0d0;
+}
+.snes-range.has-phantom-bg {
+  background: #9b5de5;
+}
+.snes-range.has-rose-bg {
+  background: #f784b2;
+}
+.snes-range.has-galaxy-bg {
+  background: #5a7d9a;
+}
+.snes-range.has-ember-bg {
+  background: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.snes-radio {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  cursor: pointer;
+}
+.snes-radio--vertical {
+  flex-direction: column;
+}
+.snes-radio input {
+  display: none;
+}
+.snes-radio input:checked ~ .snes-radio__item__content::before {
+  visibility: visible;
+}
+.snes-radio__item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  cursor: pointer;
+}
+.snes-radio__item__content {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  gap: calc(1em + 16px / 2);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  word-spacing: -0.3em;
+}
+@media (max-width: 992px) {
+  .snes-radio__item__content {
+    font-size: 12px;
+    word-spacing: -0.65em;
+  }
+}
+.snes-radio__item__content::before {
+  display: block;
+  visibility: hidden;
+  color: #4bb244;
+  transform: translateY(calc(-13em / 13));
+  margin: 0.6875em 0.875em;
+  content: "";
+  width: 0.125em;
+  height: 0.125em;
+  box-shadow: 0.375em 0.125em color-mix(in srgb, currentColor, black 30%),
+    0.5em 0.125em color-mix(in srgb, currentColor, black 30%),
+    0.625em 0.125em color-mix(in srgb, currentColor, black 30%),
+    0.75em 0.125em color-mix(in srgb, currentColor, black 30%),
+    0.875em 0.125em color-mix(in srgb, currentColor, black 30%),
+    1em 0.125em color-mix(in srgb, currentColor, black 30%),
+    1.125em 0.125em color-mix(in srgb, currentColor, black 30%),
+    1.25em 0.125em color-mix(in srgb, currentColor, black 30%),
+    1.375em 0.125em color-mix(in srgb, currentColor, black 30%),
+    1.5em 0.125em color-mix(in srgb, currentColor, black 70%),
+    1.625em 0.125em color-mix(in srgb, currentColor, black 70%),
+    1.75em 0.125em color-mix(in srgb, currentColor, black 70%),
+    0.25em 0.25em color-mix(in srgb, currentColor, black 30%),
+    0.375em 0.25em currentColor,
+    0.5em 0.25em color-mix(in srgb, currentColor, white 55%),
+    0.625em 0.25em color-mix(in srgb, currentColor, white 55%),
+    0.75em 0.25em #ffffff, 0.875em 0.25em #ffffff, 1em 0.25em #ffffff,
+    1.125em 0.25em #ffffff,
+    1.25em 0.25em color-mix(in srgb, currentColor, white 55%),
+    1.375em 0.25em color-mix(in srgb, currentColor, white 55%),
+    1.5em 0.25em color-mix(in srgb, currentColor, white 55%),
+    1.625em 0.25em currentColor,
+    1.75em 0.25em color-mix(in srgb, currentColor, black 30%),
+    1.875em 0.25em color-mix(in srgb, currentColor, black 70%),
+    0.125em 0.375em color-mix(in srgb, currentColor, black 30%),
+    0.25em 0.375em currentColor,
+    0.375em 0.375em color-mix(in srgb, currentColor, white 55%),
+    0.5em 0.375em color-mix(in srgb, currentColor, white 55%),
+    0.625em 0.375em #ffffff, 0.75em 0.375em #ffffff, 0.875em 0.375em #ffffff,
+    1em 0.375em #ffffff, 1.125em 0.375em #ffffff, 1.25em 0.375em #ffffff,
+    1.375em 0.375em color-mix(in srgb, currentColor, white 55%),
+    1.5em 0.375em color-mix(in srgb, currentColor, white 55%),
+    1.625em 0.375em color-mix(in srgb, currentColor, white 55%),
+    1.75em 0.375em currentColor,
+    1.875em 0.375em color-mix(in srgb, currentColor, black 30%),
+    2em 0.375em color-mix(in srgb, currentColor, black 70%),
+    0.125em 0.5em color-mix(in srgb, currentColor, black 70%),
+    0.25em 0.5em currentColor,
+    0.375em 0.5em color-mix(in srgb, currentColor, black 30%),
+    0.5em 0.5em color-mix(in srgb, currentColor, black 30%),
+    0.625em 0.5em currentColor, 0.75em 0.5em currentColor,
+    0.875em 0.5em currentColor, 1em 0.5em currentColor,
+    1.125em 0.5em currentColor, 1.25em 0.5em currentColor,
+    1.375em 0.5em currentColor, 1.5em 0.5em currentColor,
+    1.625em 0.5em color-mix(in srgb, currentColor, black 30%),
+    1.75em 0.5em color-mix(in srgb, currentColor, black 30%),
+    1.875em 0.5em currentColor, 2em 0.5em #000000,
+    0.125em 0.625em color-mix(in srgb, currentColor, black 70%),
+    0.25em 0.625em currentColor,
+    0.375em 0.625em color-mix(in srgb, currentColor, black 30%),
+    0.5em 0.625em color-mix(in srgb, currentColor, black 70%),
+    0.625em 0.625em currentColor, 0.75em 0.625em currentColor,
+    0.875em 0.625em currentColor,
+    1em 0.625em color-mix(in srgb, currentColor, black 30%),
+    1.125em 0.625em color-mix(in srgb, currentColor, black 30%),
+    1.25em 0.625em color-mix(in srgb, currentColor, black 30%),
+    1.375em 0.625em color-mix(in srgb, currentColor, black 70%),
+    1.5em 0.625em color-mix(in srgb, currentColor, black 70%),
+    1.625em 0.625em color-mix(in srgb, currentColor, black 30%),
+    1.75em 0.625em color-mix(in srgb, currentColor, black 30%),
+    1.875em 0.625em currentColor, 2em 0.625em #000000,
+    0.125em 0.75em color-mix(in srgb, currentColor, black 70%),
+    0.25em 0.75em color-mix(in srgb, currentColor, black 30%),
+    0.375em 0.75em currentColor,
+    0.5em 0.75em color-mix(in srgb, currentColor, black 70%),
+    0.625em 0.75em color-mix(in srgb, currentColor, black 30%),
+    0.75em 0.75em color-mix(in srgb, currentColor, white 55%),
+    0.875em 0.75em color-mix(in srgb, currentColor, white 55%),
+    1em 0.75em color-mix(in srgb, currentColor, black 30%),
+    1.125em 0.75em color-mix(in srgb, currentColor, black 30%),
+    1.25em 0.75em color-mix(in srgb, currentColor, black 70%),
+    1.375em 0.75em color-mix(in srgb, currentColor, black 70%),
+    1.5em 0.75em color-mix(in srgb, currentColor, black 70%),
+    1.625em 0.75em color-mix(in srgb, currentColor, black 70%),
+    1.75em 0.75em currentColor,
+    1.875em 0.75em color-mix(in srgb, currentColor, black 30%),
+    2em 0.75em #000000,
+    0.25em 0.875em color-mix(in srgb, currentColor, black 70%),
+    0.375em 0.875em currentColor,
+    0.5em 0.875em color-mix(in srgb, currentColor, black 30%),
+    0.625em 0.875em color-mix(in srgb, currentColor, black 70%),
+    0.75em 0.875em currentColor,
+    0.875em 0.875em color-mix(in srgb, currentColor, white 55%),
+    1em 0.875em currentColor,
+    1.125em 0.875em color-mix(in srgb, currentColor, black 30%),
+    1.25em 0.875em color-mix(in srgb, currentColor, black 70%),
+    1.375em 0.875em color-mix(in srgb, currentColor, black 70%),
+    1.5em 0.875em color-mix(in srgb, currentColor, black 70%),
+    1.625em 0.875em currentColor,
+    1.75em 0.875em color-mix(in srgb, currentColor, black 30%),
+    1.875em 0.875em #000000, 0.375em 1em #000000, 0.5em 1em currentColor,
+    0.625em 1em color-mix(in srgb, currentColor, black 30%),
+    0.75em 1em color-mix(in srgb, currentColor, black 30%),
+    0.875em 1em currentColor, 1em 1em currentColor,
+    1.125em 1em color-mix(in srgb, currentColor, black 70%),
+    1.25em 1em color-mix(in srgb, currentColor, black 70%),
+    1.375em 1em color-mix(in srgb, currentColor, black 70%),
+    1.5em 1em currentColor,
+    1.625em 1em color-mix(in srgb, currentColor, black 30%), 1.75em 1em #000000,
+    0.5em 1.125em #000000, 0.625em 1.125em currentColor,
+    0.75em 1.125em color-mix(in srgb, currentColor, black 30%),
+    0.875em 1.125em currentColor, 1em 1.125em currentColor,
+    1.125em 1.125em color-mix(in srgb, currentColor, black 70%),
+    1.25em 1.125em color-mix(in srgb, currentColor, black 70%),
+    1.375em 1.125em currentColor,
+    1.5em 1.125em color-mix(in srgb, currentColor, black 30%),
+    1.625em 1.125em #000000, 0.625em 1.25em #000000, 0.75em 1.25em currentColor,
+    0.875em 1.25em color-mix(in srgb, currentColor, black 30%),
+    1em 1.25em currentColor,
+    1.125em 1.25em color-mix(in srgb, currentColor, black 30%),
+    1.25em 1.25em currentColor,
+    1.375em 1.25em color-mix(in srgb, currentColor, black 30%),
+    1.5em 1.25em #000000, 0.75em 1.375em #000000, 0.875em 1.375em currentColor,
+    1em 1.375em currentColor, 1.125em 1.375em currentColor,
+    1.25em 1.375em color-mix(in srgb, currentColor, black 30%),
+    1.375em 1.375em #000000, 0.875em 1.5em #000000, 1em 1.5em currentColor,
+    1.125em 1.5em color-mix(in srgb, currentColor, black 30%),
+    1.25em 1.5em #000000, 1em 1.625em #000000, 1.125em 1.625em #000000;
+}
+.snes-radio__item__content:hover {
+  color: #566573;
+}
+.snes-radio__item.has-plumber-icon .snes-radio__item__content::before {
+  color: #f22561;
+}
+.snes-radio__item.has-nature-icon .snes-radio__item__content::before {
+  color: #4bb244;
+}
+.snes-radio__item.has-sunshine-icon .snes-radio__item__content::before {
+  color: #f2c019;
+}
+.snes-radio__item.has-ocean-icon .snes-radio__item__content::before {
+  color: #4eb6d9;
+}
+.snes-radio__item.has-turquoise-icon .snes-radio__item__content::before {
+  color: #40e0d0;
+}
+.snes-radio__item.has-phantom-icon .snes-radio__item__content::before {
+  color: #9b5de5;
+}
+.snes-radio__item.has-rose-icon .snes-radio__item__content::before {
+  color: #f784b2;
+}
+.snes-radio__item.has-galaxy-icon .snes-radio__item__content::before {
+  color: #5a7d9a;
+}
+.snes-radio__item.has-ember-icon .snes-radio__item__content::before {
+  color: #ff6f00;
+}
+.snes-radio.has-plumber-icons
+  .snes-radio__item
+  .snes-radio__item__content::before {
+  color: #f22561;
+}
+.snes-radio.has-nature-icons
+  .snes-radio__item
+  .snes-radio__item__content::before {
+  color: #4bb244;
+}
+.snes-radio.has-sunshine-icons
+  .snes-radio__item
+  .snes-radio__item__content::before {
+  color: #f2c019;
+}
+.snes-radio.has-ocean-icons
+  .snes-radio__item
+  .snes-radio__item__content::before {
+  color: #4eb6d9;
+}
+.snes-radio.has-turquoise-icons
+  .snes-radio__item
+  .snes-radio__item__content::before {
+  color: #40e0d0;
+}
+.snes-radio.has-phantom-icons
+  .snes-radio__item
+  .snes-radio__item__content::before {
+  color: #9b5de5;
+}
+.snes-radio.has-rose-icons
+  .snes-radio__item
+  .snes-radio__item__content::before {
+  color: #f784b2;
+}
+.snes-radio.has-galaxy-icons
+  .snes-radio__item
+  .snes-radio__item__content::before {
+  color: #5a7d9a;
+}
+.snes-radio.has-ember-icons
+  .snes-radio__item
+  .snes-radio__item__content::before {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.snes-checkbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  cursor: pointer;
+}
+.snes-checkbox--vertical {
+  flex-direction: column;
+}
+.snes-checkbox input {
+  display: none;
+}
+.snes-checkbox input:checked ~ .snes-checkbox__item__content::before {
+  margin: 0.6875em 0.8125em;
+  content: "";
+  width: 0.125em;
+  height: 0.125em;
+  box-shadow: 0.375em 0.25em #000000, 0.5em 0.25em #000000,
+    0.625em 0.25em #000000, 0.75em 0.25em #000000, 0.875em 0.25em #000000,
+    1em 0.25em #000000, 1.125em 0.25em #000000, 1.25em 0.25em #000000,
+    1.5em 0.25em #000000, 1.625em 0.25em #000000, 1.75em 0.25em #000000,
+    0.25em 0.375em #000000,
+    0.375em 0.375em color-mix(in srgb, currentColor, white 55%),
+    0.5em 0.375em color-mix(in srgb, currentColor, white 55%),
+    0.625em 0.375em color-mix(in srgb, currentColor, white 55%),
+    0.75em 0.375em color-mix(in srgb, currentColor, white 55%),
+    0.875em 0.375em color-mix(in srgb, currentColor, white 55%),
+    1em 0.375em color-mix(in srgb, currentColor, white 55%),
+    1.125em 0.375em currentColor, 1.25em 0.375em currentColor,
+    1.375em 0.375em #000000, 1.5em 0.375em #ffffff, 1.625em 0.375em #ffffff,
+    1.75em 0.375em #ffffff, 1.875em 0.375em #000000, 0.125em 0.5em #000000,
+    0.25em 0.5em color-mix(in srgb, currentColor, white 55%),
+    0.375em 0.5em currentColor, 0.5em 0.5em #000000, 0.625em 0.5em #000000,
+    0.75em 0.5em currentColor, 0.875em 0.5em currentColor,
+    1em 0.5em currentColor, 1.125em 0.5em currentColor, 1.25em 0.5em #000000,
+    1.375em 0.5em #ffffff, 1.5em 0.5em #ffffff, 1.625em 0.5em #ffffff,
+    1.75em 0.5em #ffffff, 1.875em 0.5em #000000, 0.125em 0.625em #000000,
+    0.25em 0.625em currentColor, 0.375em 0.625em #000000, 0.5em 0.625em #ffffff,
+    0.625em 0.625em #ffffff, 0.75em 0.625em #000000,
+    0.875em 0.625em currentColor, 1em 0.625em currentColor,
+    1.125em 0.625em #000000, 1.25em 0.625em #ffffff, 1.375em 0.625em #ffffff,
+    1.5em 0.625em #ffffff, 1.625em 0.625em #ffffff, 1.75em 0.625em #000000,
+    0.125em 0.75em #000000, 0.25em 0.75em currentColor, 0.375em 0.75em #000000,
+    0.5em 0.75em #ffffff, 0.625em 0.75em #ffffff, 0.75em 0.75em #ffffff,
+    0.875em 0.75em #000000, 1em 0.75em #000000, 1.125em 0.75em #ffffff,
+    1.25em 0.75em #ffffff, 1.375em 0.75em #ffffff, 1.5em 0.75em #ffffff,
+    1.625em 0.75em #000000, 0.125em 0.875em #000000, 0.25em 0.875em currentColor,
+    0.375em 0.875em #000000, 0.5em 0.875em #ffffff, 0.625em 0.875em #ffffff,
+    0.75em 0.875em #ffffff, 0.875em 0.875em #ffffff, 1em 0.875em #ffffff,
+    1.125em 0.875em #ffffff, 1.25em 0.875em #ffffff, 1.375em 0.875em #ffffff,
+    1.5em 0.875em #000000, 0.125em 1em #000000, 0.25em 1em currentColor,
+    0.375em 1em currentColor, 0.5em 1em #000000, 0.625em 1em #ffffff,
+    0.75em 1em #ffffff, 0.875em 1em #ffffff, 1em 1em #ffffff,
+    1.125em 1em #ffffff, 1.25em 1em #ffffff, 1.375em 1em #000000,
+    1.5em 1em #000000, 0.125em 1.125em #000000, 0.25em 1.125em currentColor,
+    0.375em 1.125em currentColor, 0.5em 1.125em currentColor,
+    0.625em 1.125em #000000, 0.75em 1.125em #ffffff, 0.875em 1.125em #ffffff,
+    1em 1.125em #ffffff, 1.125em 1.125em #ffffff, 1.25em 1.125em #000000,
+    1.375em 1.125em currentColor, 1.5em 1.125em #000000, 0.125em 1.25em #000000,
+    0.25em 1.25em currentColor, 0.375em 1.25em currentColor,
+    0.5em 1.25em currentColor, 0.625em 1.25em currentColor,
+    0.75em 1.25em #000000, 0.875em 1.25em #ffffff, 1em 1.25em #ffffff,
+    1.125em 1.25em #000000, 1.25em 1.25em currentColor,
+    1.375em 1.25em currentColor, 1.5em 1.25em #000000, 0.125em 1.375em #000000,
+    0.25em 1.375em currentColor, 0.375em 1.375em currentColor,
+    0.5em 1.375em currentColor, 0.625em 1.375em currentColor,
+    0.75em 1.375em currentColor, 0.875em 1.375em #000000, 1em 1.375em #000000,
+    1.125em 1.375em currentColor, 1.25em 1.375em currentColor,
+    1.375em 1.375em color-mix(in srgb, currentColor, black 35%),
+    1.5em 1.375em #000000, 0.25em 1.5em #000000, 0.375em 1.5em currentColor,
+    0.5em 1.5em currentColor,
+    0.625em 1.5em color-mix(in srgb, currentColor, black 35%),
+    0.75em 1.5em color-mix(in srgb, currentColor, black 35%),
+    0.875em 1.5em color-mix(in srgb, currentColor, black 35%),
+    1em 1.5em color-mix(in srgb, currentColor, black 35%),
+    1.125em 1.5em color-mix(in srgb, currentColor, black 35%),
+    1.25em 1.5em color-mix(in srgb, currentColor, black 35%),
+    1.375em 1.5em #000000, 0.375em 1.625em #000000, 0.5em 1.625em #000000,
+    0.625em 1.625em #000000, 0.75em 1.625em #000000, 0.875em 1.625em #000000,
+    1em 1.625em #000000, 1.125em 1.625em #000000, 1.25em 1.625em #000000;
+}
+.snes-checkbox__item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  cursor: pointer;
+}
+.snes-checkbox__item__content {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  gap: calc(1em + 15px / 2);
+  font-family: "Press Start 2P", system-ui;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  word-spacing: -0.3em;
+}
+@media (max-width: 992px) {
+  .snes-checkbox__item__content {
+    font-size: 12px;
+    word-spacing: -0.65em;
+  }
+}
+.snes-checkbox__item__content::before {
+  display: block;
+  color: #4bb244;
+  transform: translateY(calc(-14em / 13));
+  margin: 0.6875em 0.8125em;
+  content: "";
+  width: 0.125em;
+  height: 0.125em;
+  box-shadow: 0.375em 0.25em #000000, 0.5em 0.25em #000000,
+    0.625em 0.25em #000000, 0.75em 0.25em #000000, 0.875em 0.25em #000000,
+    1em 0.25em #000000, 1.125em 0.25em #000000, 1.25em 0.25em #000000,
+    0.25em 0.375em #000000, 1.375em 0.375em #000000, 0.125em 0.5em #000000,
+    1.5em 0.5em #000000, 0.125em 0.625em #000000, 1.5em 0.625em #000000,
+    0.125em 0.75em #000000, 1.5em 0.75em #000000, 0.125em 0.875em #000000,
+    1.5em 0.875em #000000, 0.125em 1em #000000, 1.5em 1em #000000,
+    0.125em 1.125em #000000, 1.5em 1.125em #000000, 0.125em 1.25em #000000,
+    1.5em 1.25em #000000, 0.125em 1.375em #000000, 1.5em 1.375em #000000,
+    0.25em 1.5em #000000, 1.375em 1.5em #000000, 0.375em 1.625em #000000,
+    0.5em 1.625em #000000, 0.625em 1.625em #000000, 0.75em 1.625em #000000,
+    0.875em 1.625em #000000, 1em 1.625em #000000, 1.125em 1.625em #000000,
+    1.25em 1.625em #000000;
+}
+.snes-checkbox__item__content:hover {
+  color: #566573;
+}
+.snes-checkbox__item.has-plumber-icon .snes-checkbox__item__content::before {
+  color: #f22561;
+}
+.snes-checkbox__item.has-nature-icon .snes-checkbox__item__content::before {
+  color: #4bb244;
+}
+.snes-checkbox__item.has-sunshine-icon .snes-checkbox__item__content::before {
+  color: #f2c019;
+}
+.snes-checkbox__item.has-ocean-icon .snes-checkbox__item__content::before {
+  color: #4eb6d9;
+}
+.snes-checkbox__item.has-turquoise-icon .snes-checkbox__item__content::before {
+  color: #40e0d0;
+}
+.snes-checkbox__item.has-phantom-icon .snes-checkbox__item__content::before {
+  color: #9b5de5;
+}
+.snes-checkbox__item.has-rose-icon .snes-checkbox__item__content::before {
+  color: #f784b2;
+}
+.snes-checkbox__item.has-galaxy-icon .snes-checkbox__item__content::before {
+  color: #5a7d9a;
+}
+.snes-checkbox__item.has-ember-icon .snes-checkbox__item__content::before {
+  color: #ff6f00;
+}
+.snes-checkbox.has-plumber-icons
+  .snes-checkbox__item
+  .snes-checkbox__item__content::before {
+  color: #f22561;
+}
+.snes-checkbox.has-nature-icons
+  .snes-checkbox__item
+  .snes-checkbox__item__content::before {
+  color: #4bb244;
+}
+.snes-checkbox.has-sunshine-icons
+  .snes-checkbox__item
+  .snes-checkbox__item__content::before {
+  color: #f2c019;
+}
+.snes-checkbox.has-ocean-icons
+  .snes-checkbox__item
+  .snes-checkbox__item__content::before {
+  color: #4eb6d9;
+}
+.snes-checkbox.has-turquoise-icons
+  .snes-checkbox__item
+  .snes-checkbox__item__content::before {
+  color: #40e0d0;
+}
+.snes-checkbox.has-phantom-icons
+  .snes-checkbox__item
+  .snes-checkbox__item__content::before {
+  color: #9b5de5;
+}
+.snes-checkbox.has-rose-icons
+  .snes-checkbox__item
+  .snes-checkbox__item__content::before {
+  color: #f784b2;
+}
+.snes-checkbox.has-galaxy-icons
+  .snes-checkbox__item
+  .snes-checkbox__item__content::before {
+  color: #5a7d9a;
+}
+.snes-checkbox.has-ember-icons
+  .snes-checkbox__item
+  .snes-checkbox__item__content::before {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.snes-blockquote {
+  position: relative;
+  width: 100%;
+  display: block;
+  text-align: center;
+  color: #fff;
+  background-color: color-mix(in srgb, #e5e5e5, black 55%);
+  padding: 32px;
+  border: solid;
+  -o-border-image: var(--border-image);
+  border-image: var(--border-image);
+  border-image-slice: 12;
+  border-width: 12px;
+  border-image-outset: 6px;
+  border-image-repeat: initial;
+}
+.snes-blockquote::before,
+.snes-blockquote::after {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: 0;
+  width: calc(100% + 6px * 3);
+  height: calc(6px * 3);
+}
+.snes-blockquote::before {
+  background-color: rgba(0, 0, 0, 0.2);
+  left: calc(0% - 6px);
+  top: calc(100% - (6px));
+  -webkit-clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+}
+.snes-blockquote::after {
+  background-color: rgba(255, 255, 255, 0.3);
+  right: calc(0% - 6px);
+  bottom: calc(100% - (6px));
+  transform: rotate(0.5turn);
+  -webkit-clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 calc(6px * 2),
+    calc(100% - 6px * 2) calc(6px * 2),
+    calc(100% - 6px * 2) 6px,
+    calc(100% - 6px) 6px,
+    calc(100% - 6px) 0,
+    100% 0,
+    100% calc(6px * 2),
+    calc(100% - 6px) calc(6px * 2),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+}
+.snes-blockquote:not(:disabled):hover::before {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.snes-blockquote:not(:disabled):hover::after {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.snes-blockquote:disabled::before {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.snes-blockquote:disabled::after {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 992px) {
+  .snes-blockquote {
+    padding: 8px;
+  }
+}
+.snes-blockquote.has-plumber-bg {
+  background-color: color-mix(in srgb, #f22561, black 55%);
+}
+.snes-blockquote.has-nature-bg {
+  background-color: color-mix(in srgb, #4bb244, black 55%);
+}
+.snes-blockquote.has-sunshine-bg {
+  background-color: color-mix(in srgb, #f2c019, black 55%);
+}
+.snes-blockquote.has-ocean-bg {
+  background-color: color-mix(in srgb, #4eb6d9, black 55%);
+}
+.snes-blockquote.has-turquoise-bg {
+  background-color: color-mix(in srgb, #40e0d0, black 55%);
+}
+.snes-blockquote.has-phantom-bg {
+  background-color: color-mix(in srgb, #9b5de5, black 55%);
+}
+.snes-blockquote.has-rose-bg {
+  background-color: color-mix(in srgb, #f784b2, black 55%);
+}
+.snes-blockquote.has-galaxy-bg {
+  background-color: color-mix(in srgb, #5a7d9a, black 55%);
+}
+.snes-blockquote.has-ember-bg {
+  background-color: color-mix(in srgb, #ff6f00, black 55%);
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.text-plumber-color {
+  color: #f22561;
+}
+.text-nature-color {
+  color: #4bb244;
+}
+.text-sunshine-color {
+  color: #f2c019;
+}
+.text-ocean-color {
+  color: #4eb6d9;
+}
+.text-turquoise-color {
+  color: #40e0d0;
+}
+.text-phantom-color {
+  color: #9b5de5;
+}
+.text-rose-color {
+  color: #f784b2;
+}
+.text-galaxy-color {
+  color: #5a7d9a;
+}
+.text-ember-color {
+  color: #ff6f00;
+}
+.snes-image {
+  max-width: 100%;
+  height: auto;
+  border: solid;
+  -o-border-image: var(--border-image);
+  border-image: var(--border-image);
+  border-image-slice: 12;
+  border-width: 12px;
+  border-image-outset: 6px;
+  border-image-repeat: initial;
+  border-image-outset: 0;
+}
+
+/*# sourceMappingURL=snes.css.map*/
