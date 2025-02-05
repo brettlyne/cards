@@ -14,24 +14,12 @@ export const shuffle = (array) => {
   return array;
 };
 
-// our target format is
-// - 4x 7-card piles
-// - 4x 6-card piles
-// - 4x foundation trackers (top card)
-// each separate by | character
-export const dealStreetsAlleys = (array) => {
-  let result = "";
-  // 4 piles of 7 cards
+// rows alternate between 7 and 6 cards
+export const dealStreetsAlleys = (deck) => {
+  let result = [];
   for (let i = 0; i < 4; i++) {
-    result += array.slice(0, 7).join("") + "|";
-    array = array.slice(7);
+    result.push(deck.splice(0, 7));
+    result.push(deck.splice(0, 6));
   }
-  // 4 piles of 6 cards
-  for (let i = 0; i < 4; i++) {
-    result += array.slice(0, 6).join("") + "|";
-    array = array.slice(6);
-  }
-  // 4 foundation trackers
-  result += "0C0D0S0H";
   return result;
 };

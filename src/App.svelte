@@ -1,114 +1,25 @@
 <script>
   import Card from "./lib/Card.svelte";
-  import { cardDeck, shuffle, dealStreetsAlleys } from "./utils/utils";
+  import "./app.css";
   import "./snes.css";
-
-  let streetsAlleys = dealStreetsAlleys(shuffle(cardDeck));
-  const rows = streetsAlleys.split("|");
-  // separate each row into an array of 2-character strings
-  // const cardRows = rows.map((row) => row.match(/.{2}/g));
-  const cardRows = shuffle(cardDeck);
-  console.log("🚀 ~ file: App.svelte:9 ~ cardRows:", cardRows);
+  import { streets } from "./streetsAndAlleys.svelte.js";
 </script>
 
 <main>
   <div class="streets-and-alleys">
-    <div class="row left">
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-    </div>
-    <div class="foundation">
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-    </div>
-    <div class="row right">
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-    </div>
-
-    <div class="row left">
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-    </div>
-    <div class="foundation">
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-    </div>
-    <div class="row right">
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-    </div>
-    <div class="row left">
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-    </div>
-    <div class="foundation">
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-    </div>
-    <div class="row right">
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-    </div>
-    <div class="row left">
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-    </div>
-    <div class="foundation">
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-    </div>
-    <div class="row right">
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-      <Card card={cardRows[Math.floor(Math.random() * 52)]} />
-    </div>
+    {#each Array(4) as _, i}
+      <div class="row left">
+        {#each streets.rows[i * 2] as card}
+          <Card {card} />
+        {/each}
+      </div>
+      <Card />
+      <div class="row right">
+        {#each streets.rows[i * 2 + 1] as card}
+          <Card {card} />
+        {/each}
+      </div>
+    {/each}
   </div>
 </main>
 

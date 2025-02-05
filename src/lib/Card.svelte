@@ -1,5 +1,5 @@
 <script>
-  export let card;
+  export let card = "2J";
 </script>
 
 <img class="card" src="/cards/{card}.svg" alt={card} />
