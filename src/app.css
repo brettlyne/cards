@@ -9,6 +9,7 @@
   --card-secondary-letter: var(--card-secondary-pips);
   --card-accent: #fc4;
   --card-accent-2: #221387;
+  --backdrop-filter: hue-rotate(0deg) brightness(1.1) saturate(2);
 }
 
 /* Theme Classes */
@@ -22,6 +23,7 @@
   --card-secondary-letter: var(--card-secondary-pips);
   --card-accent: #63562a;
   --card-accent-2: #0091ac;
+  --backdrop-filter: hue-rotate(40deg) brightness(0.5) saturate(1.2);
 }
 
 :root.theme-neon {
@@ -34,6 +36,7 @@
   --card-secondary-letter: var(--card-secondary-pips);
   --card-accent: #0012de;
   --card-accent-2: #d89eff;
+  --backdrop-filter: hue-rotate(168deg) brightness(0.3) saturate(9);
 }
 
 :root.theme-dracula {
@@ -46,6 +49,7 @@
   --card-secondary-letter: var(--card-secondary-pips);
   --card-accent: #bd93f9;
   --card-accent-2: #50fa7b;
+  --backdrop-filter: hue-rotate(142deg) brightness(0.5) saturate(2.5);
 }
 
 :root.theme-solarized {
@@ -58,11 +62,13 @@
   --card-secondary-letter: var(--card-secondary-pips);
   --card-accent: #b58900;
   --card-accent-2: #2aa198;
+  --backdrop-filter: hue-rotate(-60deg) brightness(1.6) saturate(0.8)
+    contrast(0.8);
 }
 
 :root.theme-sepia {
   --card-background: #f4ecd8;
-  --card-primary-pips: #322669;
+  --card-primary-pips: #1a1439;
   --card-primary-stroke: #8b4513;
   --card-primary-letter: var(--card-primary-pips);
   --card-secondary-pips: #8b0000;
@@ -70,6 +76,8 @@
   --card-secondary-letter: var(--card-secondary-pips);
   --card-accent: #daa520;
   --card-accent-2: #3d5627;
+  --backdrop-filter: hue-rotate(260deg) brightness(2) saturate(3.8)
+    contrast(0.5);
 }
 
 :root {
@@ -79,12 +87,24 @@
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-  background: url("bg.jpg") repeat;
-
+  position: relative;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("bg.jpg") repeat;
+  filter: var(--backdrop-filter);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .streets-and-alleys {
