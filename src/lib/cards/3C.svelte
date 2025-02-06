@@ -11,7 +11,7 @@
       preserveAspectRatio="xMinYMid"
       ><path
         d="M30 150C35 385 85 400 130 500L-130 500C-85 400 -35 385 -30 150A10 10 0 0 0 -50 150A210 210 0 1 1 -124 -51A10 10 0 0 0 -110 -65A230 230 0 1 1 110 -65A10 10 0 0 0 124 -51A210 210 0 1 1 50 150A10 10 0 0 0 30 150Z"
-        fill="black"
+        fill="var(--card-primary-pips)"
       ></path></symbol
     ><symbol
       id="VC3"
@@ -19,7 +19,7 @@
       preserveAspectRatio="xMinYMid"
       ><path
         d="M-250 -320L-250 -460L200 -460L-110 -80C-100 -90 -50 -120 0 -120C200 -120 250 0 250 150C250 350 170 460 -30 460C-230 460 -260 300 -260 300"
-        stroke="black"
+        stroke="var(--card-primary-letter)"
         stroke-width="80"
         stroke-linecap="square"
         stroke-miterlimit="1.5"
@@ -33,8 +33,8 @@
     y="-167.5"
     rx="12"
     ry="12"
-    fill="white"
-    stroke="black"
+    fill="var(--card-background)"
+    stroke="var(--card-primary-stroke)"
   ></rect><use xlink:href="#VC3" height="32" width="32" x="-114.4" y="-156"
   ></use><use xlink:href="#VC3" height="32" width="32" x="82.4" y="-156"
   ></use><use

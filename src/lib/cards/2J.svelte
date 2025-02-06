@@ -7,7 +7,7 @@
   ><defs
     ><symbol id="J22" preserveAspectRatio="none" viewBox="0 0 1300 2000"
       ><path
-        stroke="black"
+        stroke="var(--card-primary-stroke)"
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="6"
@@ -16,7 +16,7 @@
       ></path></symbol
     ><symbol id="J21" preserveAspectRatio="none" viewBox="0 0 1300 2000"
       ><path
-        fill="black"
+        fill="var(--card-primary-pips)"
         d="M879.65521,937.6026a40,40 0 0 1 -40,40 40,40 0 0 1 -40,-40 40,40 0 0 1 40,-40 40,40 0 0 1 40,40zm-379.31039,0a40,40 0 0 1 -40,40 40,40 0 0 1 -40,-40 40,40 0 0 1 40,-40 40,40 0 0 1 40,40z"
       ></path></symbol
     ></defs
@@ -27,8 +27,8 @@
     y="-167.5"
     rx="12"
     ry="12"
-    fill="white"
-    stroke="black"
+    fill="var(--card-background)"
+    stroke="var(--card-primary-stroke)"
   ></rect><use width="202.8" height="312" x="-101.4" y="-156" xlink:href="#J21"
   ></use><use width="202.8" height="312" x="-101.4" y="-156" xlink:href="#J22"
   ></use></svg

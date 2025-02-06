@@ -11,7 +11,7 @@
       preserveAspectRatio="xMinYMid"
       ><path
         d="M0 -300C0 -400 100 -500 200 -500C300 -500 400 -400 400 -250C400 0 0 400 0 500C0 400 -400 0 -400 -250C-400 -400 -300 -500 -200 -500C-100 -500 0 -400 -0 -300Z"
-        fill="#CE3634"
+        fill="var(--card-secondary-pips)"
       ></path></symbol
     ><symbol
       id="VH2"
@@ -19,7 +19,7 @@
       preserveAspectRatio="xMinYMid"
       ><path
         d="M-225 -225C-245 -265 -200 -460 0 -460C 200 -460 225 -325 225 -225C225 -25 -225 160 -225 460L225 460L225 300"
-        stroke="#CE3634"
+        stroke="var(--card-secondary-letter)"
         stroke-width="80"
         stroke-linecap="square"
         stroke-miterlimit="1.5"
@@ -33,8 +33,8 @@
     y="-167.5"
     rx="12"
     ry="12"
-    fill="white"
-    stroke="black"
+    fill="var(--card-background)"
+    stroke="var(--card-secondary-stroke)"
   ></rect><use xlink:href="#VH2" height="32" width="32" x="-114.4" y="-156"
   ></use><use xlink:href="#VH2" height="32" width="32" x="82.4" y="-156"
   ></use><use

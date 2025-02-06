@@ -11,7 +11,7 @@
       preserveAspectRatio="xMinYMid"
       ><path
         d="M-400 0C-350 0 0 -450 0 -500C0 -450 350 0 400 0C350 0 0 450 0 500C0 450 -350 0 -400 0Z"
-        fill="#CE3634"
+        fill="var(--card-secondary-pips)"
       ></path></symbol
     ><symbol
       id="VD6"
@@ -19,7 +19,7 @@
       preserveAspectRatio="xMinYMid"
       ><path
         d="M-250 100A250 250 0 0 1 250 100L250 210A250 250 0 0 1 -250 210L-250 -210A250 250 0 0 1 0 -460C150 -460 180 -400 200 -375"
-        stroke="#CE3634"
+        stroke="var(--card-secondary-letter)"
         stroke-width="80"
         stroke-linecap="square"
         stroke-miterlimit="1.5"
@@ -33,8 +33,8 @@
     y="-167.5"
     rx="12"
     ry="12"
-    fill="white"
-    stroke="black"
+    fill="var(--card-background)"
+    stroke="var(--card-secondary-stroke)"
   ></rect><use xlink:href="#VD6" height="32" width="32" x="-114.4" y="-156"
   ></use><use xlink:href="#VD6" height="32" width="32" x="82.4" y="-156"
   ></use><use

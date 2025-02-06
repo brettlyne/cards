@@ -14,12 +14,17 @@
 </div>
 
 <style>
+  :root {
+    --card-aspect-ratio: 2.5/3.5;
+    --card-max-height: calc((92vh - 60px) / 4);
+    --card-width: min(12vw, calc(var(--card-max-height) * (2.5 / 3.5)));
+  }
+
   .card-wrapper {
     position: relative;
-    width: 100vw;
-    max-width: 12vw;
-    max-height: 21vh;
-    aspect-ratio: 2.5/3.5;
+    width: var(--card-width);
+    max-height: var(--card-max-height);
+    aspect-ratio: var(--card-aspect-ratio);
     filter: drop-shadow(0 0 0.4rem #4c350660);
     border-radius: 1em;
   }

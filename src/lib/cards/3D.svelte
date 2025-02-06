@@ -11,7 +11,7 @@
       preserveAspectRatio="xMinYMid"
       ><path
         d="M-400 0C-350 0 0 -450 0 -500C0 -450 350 0 400 0C350 0 0 450 0 500C0 450 -350 0 -400 0Z"
-        fill="#CE3634"
+        fill="var(--card-secondary-pips)"
       ></path></symbol
     ><symbol
       id="VD3"
@@ -19,7 +19,7 @@
       preserveAspectRatio="xMinYMid"
       ><path
         d="M-250 -320L-250 -460L200 -460L-110 -80C-100 -90 -50 -120 0 -120C200 -120 250 0 250 150C250 350 170 460 -30 460C-230 460 -260 300 -260 300"
-        stroke="#CE3634"
+        stroke="var(--card-secondary-letter)"
         stroke-width="80"
         stroke-linecap="square"
         stroke-miterlimit="1.5"
@@ -33,8 +33,8 @@
     y="-167.5"
     rx="12"
     ry="12"
-    fill="white"
-    stroke="black"
+    fill="var(--card-background)"
+    stroke="var(--card-secondary-stroke)"
   ></rect><use xlink:href="#VD3" height="32" width="32" x="-114.4" y="-156"
   ></use><use xlink:href="#VD3" height="32" width="32" x="82.4" y="-156"
   ></use><use

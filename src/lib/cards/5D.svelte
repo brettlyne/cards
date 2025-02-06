@@ -11,7 +11,7 @@
       preserveAspectRatio="xMinYMid"
       ><path
         d="M-400 0C-350 0 0 -450 0 -500C0 -450 350 0 400 0C350 0 0 450 0 500C0 450 -350 0 -400 0Z"
-        fill="#CE3634"
+        fill="var(--card-secondary-pips)"
       ></path></symbol
     ><symbol
       id="VD5"
@@ -19,7 +19,7 @@
       preserveAspectRatio="xMinYMid"
       ><path
         d="M170 -460L-175 -460L-210 -115C-210 -115 -200 -200 0 -200C100 -200 255 -80 255 120C255 320 180 460 -20 460C-220 460 -255 285 -255 285"
-        stroke="#CE3634"
+        stroke="var(--card-secondary-letter)"
         stroke-width="80"
         stroke-linecap="square"
         stroke-miterlimit="1.5"
@@ -33,8 +33,8 @@
     y="-167.5"
     rx="12"
     ry="12"
-    fill="white"
-    stroke="black"
+    fill="var(--card-background)"
+    stroke="var(--card-secondary-stroke)"
   ></rect><use xlink:href="#VD5" height="32" width="32" x="-114.4" y="-156"
   ></use><use xlink:href="#VD5" height="32" width="32" x="82.4" y="-156"
   ></use><use

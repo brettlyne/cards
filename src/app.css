@@ -1,13 +1,81 @@
 :root {
-  --card-bg: white;
-  --card-primary: black;
-  --card-secondary: red;
-  --card-accent: lime;
+  /* Light Theme (Default) */
+  --card-background: white;
+  --card-primary-pips: black;
+  --card-primary-stroke: black;
+  --card-primary-letter: var(--card-primary-pips);
+  --card-secondary-pips: #ce3634;
+  --card-secondary-stroke: var(--card-primary-stroke);
+  --card-secondary-letter: var(--card-secondary-pips);
+  --card-accent: #fc4;
+  --card-accent-2: #221387;
+}
 
+/* Theme Classes */
+:root.theme-dark {
+  --card-background: #1b211f;
+  --card-primary-pips: #bbeaff;
+  --card-primary-stroke: #acacac;
+  --card-primary-letter: var(--card-primary-pips);
+  --card-secondary-pips: #ff6b6b;
+  --card-secondary-stroke: var(--card-primary-stroke);
+  --card-secondary-letter: var(--card-secondary-pips);
+  --card-accent: #63562a;
+  --card-accent-2: #0091ac;
+}
+
+:root.theme-neon {
+  --card-background: #0c0c1d;
+  --card-primary-pips: #00ff00;
+  --card-primary-stroke: #4d4d4d;
+  --card-primary-letter: var(--card-primary-pips);
+  --card-secondary-pips: #ff00ff;
+  --card-secondary-stroke: var(--card-primary-stroke);
+  --card-secondary-letter: var(--card-secondary-pips);
+  --card-accent: #0012de;
+  --card-accent-2: #d89eff;
+}
+
+:root.theme-dracula {
+  --card-background: #282a36;
+  --card-primary-pips: #f8f8f2;
+  --card-primary-stroke: #44475a;
+  --card-primary-letter: var(--card-primary-pips);
+  --card-secondary-pips: #ff5555;
+  --card-secondary-stroke: var(--card-primary-stroke);
+  --card-secondary-letter: var(--card-secondary-pips);
+  --card-accent: #bd93f9;
+  --card-accent-2: #50fa7b;
+}
+
+:root.theme-solarized {
+  --card-background: #fdf6e3;
+  --card-primary-pips: #073642;
+  --card-primary-stroke: #586e75;
+  --card-primary-letter: var(--card-primary-pips);
+  --card-secondary-pips: #dc322f;
+  --card-secondary-stroke: var(--card-primary-stroke);
+  --card-secondary-letter: var(--card-secondary-pips);
+  --card-accent: #b58900;
+  --card-accent-2: #2aa198;
+}
+
+:root.theme-sepia {
+  --card-background: #f4ecd8;
+  --card-primary-pips: #322669;
+  --card-primary-stroke: #8b4513;
+  --card-primary-letter: var(--card-primary-pips);
+  --card-secondary-pips: #8b0000;
+  --card-secondary-stroke: var(--card-primary-stroke);
+  --card-secondary-letter: var(--card-secondary-pips);
+  --card-accent: #daa520;
+  --card-accent-2: #3d5627;
+}
+
+:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
