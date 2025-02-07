@@ -9,7 +9,7 @@
   --card-secondary-letter: var(--card-secondary-pips);
   --card-accent: #fc4;
   --card-accent-2: #221387;
-  --backdrop-filter: hue-rotate(0deg) brightness(1.1) saturate(2);
+  --backdrop-filter: hue-rotate(0deg) brightness(0.6) saturate(2);
 }
 
 /* Theme Classes */
