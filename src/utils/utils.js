@@ -13,13 +13,3 @@ export const shuffle = (array) => {
   }
   return array;
 };
-
-// rows alternate between 7 and 6 cards
-export const dealStreetsAlleys = (deck) => {
-  let result = [];
-  for (let i = 0; i < 4; i++) {
-    result.push(deck.splice(0, 7));
-    result.push(deck.splice(0, 6));
-  }
-  return result;
-};
