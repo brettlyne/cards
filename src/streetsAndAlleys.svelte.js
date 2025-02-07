@@ -211,10 +211,13 @@ function canMoveToFoundationSolver(card, topCard) {
 export function isProbablyWinnable() {
   // Convert initial state to solver format
   function stateToSolver(state) {
+    // Convert rows to pipe-separated strings and sort them
     const rowsStr = state.rows
       .map((row) => row.map((card) => cardToSolver(card)).join(""))
+      .sort()
       .join("|");
 
+    // For foundations, only need top card of each (or empty string if no cards)
     const foundationsStr = state.foundations
       .map((f) => (f.length ? cardToSolver(f[f.length - 1]) : ""))
       .join("_");
@@ -270,6 +273,8 @@ export function isProbablyWinnable() {
             if (i === targetRowIndex) return r + cardChar;
             return r;
           });
+          // Sort rows to normalize state representation
+          newRows.sort();
           nextStates.push(
             newRows.join("|") +
               (foundationsArr.length ? "_" + foundationsArr.join("_") : "")
@@ -284,6 +289,8 @@ export function isProbablyWinnable() {
           const newRows = rows.map((r, i) =>
             i === sourceRowIndex ? r.slice(0, -1) : r
           );
+          // Sort rows to normalize state representation
+          newRows.sort();
           const newFoundations = [...foundationsArr];
           newFoundations[foundationIndex] = cardChar;
           nextStates.push(newRows.join("|") + "_" + newFoundations.join("_"));
@@ -295,6 +302,8 @@ export function isProbablyWinnable() {
         const newRows = rows.map((r, i) =>
           i === sourceRowIndex ? r.slice(0, -1) : r
         );
+        // Sort rows to normalize state representation
+        newRows.sort();
         const newFoundations = [...foundationsArr, cardChar];
         nextStates.push(newRows.join("|") + "_" + newFoundations.join("_"));
       }
@@ -303,34 +312,112 @@ export function isProbablyWinnable() {
     return nextStates;
   }
 
-  const visited = new Set();
+  class StateQueue {
+    constructor() {
+      // Array of arrays - index is foundation count
+      this.queues = Array(100)
+        .fill(null)
+        .map(() => []); // Increased size for combined score
+      this.size = 0;
+    }
+
+    getStateScore(state) {
+      const [rowsStr, foundationsStr] = state.split("_");
+      const rows = rowsStr.split("|");
+      const foundations = (foundationsStr || "").split("_");
+
+      // Score 1: Number of cards in foundations (0-52)
+      const foundationScore = foundations.filter((f) => f).length * 4;
+
+      // Score 2: Accessibility of next needed cards (negative score for buried cards)
+      let accessibilityScore = 0;
+      foundations.forEach((topCard, suit) => {
+        const nextValue = topCard ? getSolverValue(topCard) + 1 : 0;
+        if (nextValue <= 12) {
+          // Skip if foundation is complete
+          const nextCardChar = String.fromCharCode(nextValue * 4 + suit + 48);
+          // Search for next card in rows
+          rows.forEach((row) => {
+            const cardIndex = row.indexOf(nextCardChar);
+            if (cardIndex !== -1) {
+              // Cards on top of our target card reduce score
+              const cardsOnTop = row.length - cardIndex - 1;
+              accessibilityScore -= cardsOnTop * 2;
+            }
+          });
+        }
+      });
+
+      // Score 3: Empty columns (0-16)
+      const emptyScore = rows.filter((row) => row.length === 0).length * 4;
+
+      // Combine scores and offset by 20 to ensure non-negative (foundation cards matter most, then empty columns, then accessibility)
+      return foundationScore + emptyScore + accessibilityScore + 20;
+    }
+
+    push(state) {
+      const score = this.getStateScore(state);
+      this.queues[score].push(state);
+      this.size++;
+    }
+
+    pop() {
+      // Find highest non-empty queue
+      for (let i = this.queues.length - 1; i >= 0; i--) {
+        if (this.queues[i].length > 0) {
+          this.size--;
+          return this.queues[i].shift();
+        }
+      }
+      return undefined;
+    }
+
+    get length() {
+      return this.size;
+    }
+
+    peek() {
+      for (let i = this.queues.length - 1; i >= 0; i--) {
+        if (this.queues[i].length > 0) {
+          return this.queues[i][0];
+        }
+      }
+      return undefined;
+    }
+  }
+
   const pathParent = new Map();
-  const gameStack = [stateToSolver(streets)];
-  visited.add(gameStack[0]);
+  const gameQueue = new StateQueue();
+  gameQueue.push(stateToSolver(streets));
   let iterations = 0;
   let lastTime = performance.now();
 
-  while (gameStack.length > 0) {
+  while (gameQueue.length > 0) {
     iterations++;
     if (iterations % 40000 === 0) {
       const now = performance.now();
       const elapsed = now - lastTime;
+      // Log queue sizes
+      const queueSizes = gameQueue.queues
+        .map((q, i) => (q.length > 0 ? `${i}: ${q.length}` : null))
+        .filter(Boolean);
       console.log(
-        `Iterations: ${iterations}, Stack: ${gameStack.length}, Visited: ${
-          visited.size
+        `Iterations: ${iterations}, Queue: ${gameQueue.length}, Visited: ${
+          pathParent.size
         }, Time: ${elapsed.toFixed(2)}ms`
       );
-      console.table(solverToState(gameStack[gameStack.length - 1]).rows);
+      console.log("Queue sizes:", queueSizes.join(", "));
+      console.table(solverToState(gameQueue.peek()).rows);
       lastTime = now;
     }
 
-    const solverStr = gameStack.pop();
+    const solverStr = gameQueue.pop();
     const [rowsStr] = solverStr.split("_");
     const emptyRows = rowsStr
       .split("|")
       .filter((row) => row.length === 0).length;
 
-    if (emptyRows >= 2) {
+    if (emptyRows >= 3) {
       const path = [];
       let current = solverStr;
       while (current) {
@@ -343,10 +430,9 @@ export function isProbablyWinnable() {
 
     const nextStates = nextSolverStates(solverStr);
     nextStates.forEach((nextStr) => {
-      if (!visited.has(nextStr)) {
-        visited.add(nextStr);
+      if (!pathParent.has(nextStr)) {
         pathParent.set(nextStr, solverStr);
-        gameStack.push(nextStr);
+        gameQueue.push(nextStr);
       }
     });
   }
