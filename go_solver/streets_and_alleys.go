@@ -565,69 +565,82 @@ func (g *StreetsGame) applyMove(move Move) (StreetsGame, error) {
 	return newState, fmt.Errorf("invalid move: destination row %d is full", move.To)
 }
 
-func main() {
-	example := `TS 8D 6C 9S 2H 2C 3H
-9D TH QC 5C AC 7D 5D
-5S QS 4C 3D KS 7C AH
-8S KC JS JC 2D 9C QD
-5H 7S TD 6S AD 4H
-TC KH 6D 4S 6H KD
-3S 7H AS 2S 8C 4D
-3C 9H JD 8H JH QH`
-	
-	var game StreetsGame
-	if err := game.FromString(example); err != nil {
-		fmt.Printf("Error parsing game: %v\n", err)
-		return
-	}
-
-	fmt.Println("Initial state from example string:")
-	game.Print()
-
-	fmt.Println("\nState after normalizing:")
-	game.NormalizeRows()
-	game.Print()
-	
-	// Test hash roundtrip
-	hash := game.Hash()
-	var gameTwo StreetsGame
-	if err := gameTwo.FromHash(hash); err != nil {
-		fmt.Printf("Error parsing game in hash test: %v\n", err)
-		return
-	}
-	if !game.Equals(gameTwo) {
-		fmt.Println("Hash roundtrip failed")
-	} else {
-		fmt.Println("\nHash Test roundtrip succeeded")
-	}
-	
-	// Get and print legal moves
-	fmt.Println("\nLegal moves:")
-	moves := game.generateLegalMoves()
-	for i, move := range moves {
-		if move.To == Foundation {
-			fromCard, _ := game.getLastCard(move.From)
-			fmt.Printf("%d: %s (value: %d)\n", i, move, fromCard.Value)
-		} else {
-			fromCard, _ := game.getLastCard(move.From)
-			toCard, _ := game.getLastCard(move.To)
-			fmt.Printf("%d: %s (%d -> %d)\n", i, move, fromCard.Value, toCard.Value)
+// CountCardsInRows returns the total number of cards still in the rows (not in foundations)
+func (g *StreetsGame) CountCardsInRows() int {
+	count := 0
+	for row := 0; row < 8; row++ {
+		for col := 0; col < 19; col++ {
+			if (g.Rows[row][col] != Card{}) {
+				count++
+			}
 		}
 	}
-	
-	// Apply a foundation move and a regular move
-	for i, move := range moves {
-		fmt.Printf("\nApplying move %d: %s\n", i, move)
-		newState, err := game.applyMove(move)
-		if err != nil {
-			fmt.Printf("Error applying move: %v\n", err)
-			continue
-		}
-		newState.Print()
-		
-		// Just do two moves for demonstration
-		if i == 1 {
-			break
-		}
-	}
+	return count
 }
+
+// func main() {
+// 	example := `TS 8D 6C 9S 2H 2C 3H
+// 9D TH QC 5C AC 7D 5D
+// 5S QS 4C 3D KS 7C AH
+// 8S KC JS JC 2D 9C QD
+// 5H 7S TD 6S AD 4H
+// TC KH 6D 4S 6H KD
+// 3S 7H AS 2S 8C 4D
+// 3C 9H JD 8H JH QH`
+	
+// 	var game StreetsGame
+// 	if err := game.FromString(example); err != nil {
+// 		fmt.Printf("Error parsing game: %v\n", err)
+// 		return
+// 	}
+
+// 	fmt.Println("Initial state from example string:")
+// 	game.Print()
+
+// 	fmt.Println("\nState after normalizing:")
+// 	game.NormalizeRows()
+// 	game.Print()
+	
+// 	// Test hash roundtrip
+// 	hash := game.Hash()
+// 	var gameTwo StreetsGame
+// 	if err := gameTwo.FromHash(hash); err != nil {
+// 		fmt.Printf("Error parsing game in hash test: %v\n", err)
+// 		return
+// 	}
+// 	if !game.Equals(gameTwo) {
+// 		fmt.Println("Hash roundtrip failed")
+// 	} else {
+// 		fmt.Println("\nHash Test roundtrip succeeded")
+// 	}
+	
+// 	// Get and print legal moves
+// 	fmt.Println("\nLegal moves:")
+// 	moves := game.generateLegalMoves()
+// 	for i, move := range moves {
+// 		if move.To == Foundation {
+// 			fromCard, _ := game.getLastCard(move.From)
+// 			fmt.Printf("%d: %s (value: %d)\n", i, move, fromCard.Value)
+// 		} else {
+// 			fromCard, _ := game.getLastCard(move.From)
+// 			toCard, _ := game.getLastCard(move.To)
+// 			fmt.Printf("%d: %s (%d -> %d)\n", i, move, fromCard.Value, toCard.Value)
+// 		}
+// 	}
+	
+// 	// Apply a foundation move and a regular move
+// 	for i, move := range moves {
+// 		fmt.Printf("\nApplying move %d: %s\n", i, move)
+// 		newState, err := game.applyMove(move)
+// 		if err != nil {
+// 			fmt.Printf("Error applying move: %v\n", err)
+// 			continue
+// 		}
+// 		newState.Print()
+		
+// 		// Just do two moves for demonstration
+// 		if i == 1 {
+// 			break
+// 		}
+// 	}
+// }
