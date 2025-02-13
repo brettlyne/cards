@@ -424,7 +424,7 @@ const (
 	// Foundation represents moving a card to the foundation
 	Foundation = -1
 )
-// move = Move{From: 2, To: Foundation}  // Move from row 2 to foundation
+
 // Move represents moving a card from one row to another
 // If To is Foundation, the card is moved to the foundation
 type Move struct {
@@ -432,7 +432,138 @@ type Move struct {
 	To   int
 }
 
+// String returns a human-readable representation of the move
+func (m Move) String() string {
+	if m.To == Foundation {
+		return fmt.Sprintf("from row %d to foundation", m.From)
+	}
+	return fmt.Sprintf("from row %d to row %d", m.From, m.To)
+}
 
+// getLastCard returns the last card in a row and its column position
+// If the row is empty, returns an empty card and -1
+func (g *StreetsGame) getLastCard(row int) (Card, int) {
+	for col := 18; col >= 0; col-- {
+		if (g.Rows[row][col] != Card{}) {
+			return g.Rows[row][col], col
+		}
+	}
+	return Card{}, -1
+}
+
+// getLowestRemainingCards returns a map of suit to lowest remaining card value
+func (g *StreetsGame) getLowestRemainingCards() map[string]int {
+	lowest := map[string]int{
+		"H": 14, // Higher than any card
+		"D": 14,
+		"C": 14,
+		"S": 14,
+	}
+	
+	// Check all cards in all rows
+	for row := 0; row < 8; row++ {
+		for col := 0; col < 19; col++ {
+			card := g.Rows[row][col]
+			if (card != Card{}) {
+				if card.Value < lowest[card.Suit] {
+					lowest[card.Suit] = card.Value
+				}
+			}
+		}
+	}
+	
+	return lowest
+}
+
+// generateLegalMoves returns all legal moves in the current game state
+func (g *StreetsGame) generateLegalMoves() []Move {
+	moves := make([]Move, 0)
+	lowest := g.getLowestRemainingCards()
+	
+	// Find first empty row if any
+	emptyRow := -1
+	for row := 0; row < 8; row++ {
+		if _, col := g.getLastCard(row); col == -1 {
+			emptyRow = row
+			break
+		}
+	}
+	
+	// For each row, get the last card
+	for fromRow := 0; fromRow < 8; fromRow++ {
+		card, col := g.getLastCard(fromRow)
+		if col == -1 { // Empty row
+			continue
+		}
+		
+		// Check if this card is the lowest of its suit
+		if card.Value == lowest[card.Suit] {
+			moves = append(moves, Move{From: fromRow, To: Foundation})
+		}
+		
+		// If we found an empty row, we can move there
+		if emptyRow != -1 && emptyRow != fromRow {
+			moves = append(moves, Move{From: fromRow, To: emptyRow})
+		}
+		
+		// Check if this card can move to another non-empty row
+		for toRow := 0; toRow < 8; toRow++ {
+			if fromRow == toRow {
+				continue
+			}
+			
+			targetCard, targetCol := g.getLastCard(toRow)
+			if targetCol == -1 { // Skip empty rows
+				continue
+			}
+			
+			// Can only move to a card one higher
+			if card.Value+1 == targetCard.Value {
+				moves = append(moves, Move{From: fromRow, To: toRow})
+			}
+		}
+	}
+	
+	return moves
+}
+
+// Clone returns a deep copy of the game state
+func (g StreetsGame) Clone() StreetsGame {
+	var clone StreetsGame
+	clone.Rows = g.Rows // This works because arrays are copied by value in Go
+	return clone
+}
+
+// applyMove returns a new game state that results from applying the move
+func (g *StreetsGame) applyMove(move Move) (StreetsGame, error) {
+	// Create a copy of the game state
+	newState := g.Clone()
+	
+	// Get the card we're moving
+	card, fromCol := newState.getLastCard(move.From)
+	if fromCol == -1 {
+		return newState, fmt.Errorf("invalid move: source row %d is empty", move.From)
+	}
+	
+	// Remove card from source row
+	newState.Rows[move.From][fromCol] = Card{}
+	
+	// If moving to foundation, we're done
+	if move.To == Foundation {
+		return newState, nil
+	}
+	
+	// Otherwise, add card to destination row
+	// Find first empty slot in destination row
+	for col := 0; col < 19; col++ {
+		if (newState.Rows[move.To][col] == Card{}) {
+			newState.Rows[move.To][col] = card
+			return newState, nil
+		}
+	}
+	
+	return newState, fmt.Errorf("invalid move: destination row %d is full", move.To)
+}
 
 func main() {
 	example := `TS 8D 6C 9S 2H 2C 3H
@@ -449,19 +580,54 @@ TC KH 6D 4S 6H KD
 		fmt.Printf("Error parsing game: %v\n", err)
 		return
 	}
-	
-	fmt.Println("Original game:")
+
+	fmt.Println("Initial state from example string:")
+	game.Print()
+
+	fmt.Println("\nState after normalizing:")
+	game.NormalizeRows()
 	game.Print()
 	
-	fmt.Println("\nRoundtrip from string test:")
-	fmt.Println("game.ToString() == example:", game.ToString() == example)
-
-	fmt.Println("\nRoundtrip from hash test:")
+	// Test hash roundtrip
 	hash := game.Hash()
 	var gameTwo StreetsGame
 	if err := gameTwo.FromHash(hash); err != nil {
-		fmt.Printf("Error parsing game: %v\n", err)
+		fmt.Printf("Error parsing game in hash test: %v\n", err)
 		return
 	}
-	fmt.Println("game.Equals(gameTwo):", game.Equals(gameTwo))
+	if !game.Equals(gameTwo) {
+		fmt.Println("Hash roundtrip failed")
+	} else {
+		fmt.Println("\nHash Test roundtrip succeeded")
+	}
+	
+	// Get and print legal moves
+	fmt.Println("\nLegal moves:")
+	moves := game.generateLegalMoves()
+	for i, move := range moves {
+		if move.To == Foundation {
+			fromCard, _ := game.getLastCard(move.From)
+			fmt.Printf("%d: %s (value: %d)\n", i, move, fromCard.Value)
+		} else {
+			fromCard, _ := game.getLastCard(move.From)
+			toCard, _ := game.getLastCard(move.To)
+			fmt.Printf("%d: %s (%d -> %d)\n", i, move, fromCard.Value, toCard.Value)
+		}
+	}
+	
+	// Apply a foundation move and a regular move
+	for i, move := range moves {
+		fmt.Printf("\nApplying move %d: %s\n", i, move)
+		newState, err := game.applyMove(move)
+		if err != nil {
+			fmt.Printf("Error applying move: %v\n", err)
+			continue
+		}
+		newState.Print()
+		
+		// Just do two moves for demonstration
+		if i == 1 {
+			break
+		}
+	}
 }
