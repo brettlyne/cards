@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"math/rand"
 )
 
 const (
 	maxRolloutLength = 300 // Maximum number of moves in a simulation
+	explorationConstant = 1.414 // sqrt(2)
 )
 
 // MCTSNode represents a node in the Monte Carlo Tree Search
@@ -27,6 +29,85 @@ func NewMCTSNode(gameStateHash string, parent *MCTSNode) *MCTSNode {
 		Visits:        0,
 		TotalReward:   0,
 	}
+}
+
+// selectChild uses UCT formula to select the most promising child node
+func (n *MCTSNode) selectChild() (*MCTSNode, Move) {
+    bestScore := -1.0
+    var bestChild *MCTSNode
+    var bestMove Move
+
+    for move, child := range n.Children {
+        if child.Visits == 0 {
+            return child, move
+        }
+
+        // UCT formula: average reward + exploration bonus
+        exploitation := child.TotalReward / float64(child.Visits)
+        exploration := explorationConstant * 
+            math.Sqrt(math.Log(float64(n.Visits))/float64(child.Visits))
+        score := exploitation + exploration
+
+        if score > bestScore {
+            bestScore = score
+            bestChild = child
+            bestMove = move
+        }
+    }
+
+    return bestChild, bestMove
+}
+
+// expand adds all possible child nodes to the current node
+func (n *MCTSNode) expand(gameState StreetsGame) {
+    legalMoves := gameState.generateLegalMoves()
+    
+    for _, move := range legalMoves {
+        nextState, _ := gameState.applyMove(move)
+        if _, exists := n.Children[move]; !exists {
+            n.Children[move] = NewMCTSNode(nextState.Hash(), n)
+        }
+    }
+}
+
+// backpropagate updates node statistics up the tree
+func (n *MCTSNode) backpropagate(reward float64) {
+    current := n
+    for current != nil {
+        current.Visits++
+        current.TotalReward += reward
+        current = current.Parent
+    }
+}
+
+// runMCTS performs one iteration of the MCTS algorithm
+func runMCTS(rootState StreetsGame, rootNode *MCTSNode) {
+    // Selection phase - traverse tree until we reach a leaf node
+    currentNode := rootNode
+    currentState := rootState.Clone()
+    var move Move
+
+    for len(currentNode.Children) > 0 {
+        currentNode, move = currentNode.selectChild()
+        nextState, _ := currentState.applyMove(move)
+        currentState = nextState
+    }
+
+    // Expansion phase - if node has been visited before, expand it
+    if currentNode.Visits > 0 {
+        currentNode.expand(currentState)
+        if len(currentNode.Children) > 0 {
+            currentNode, move = currentNode.selectChild()
+            nextState, _ := currentState.applyMove(move)
+            currentState = nextState
+        }
+    }
+
+    // Simulation phase
+    reward, _ := runMonteCarloSimulation(currentState)
+
+    // Backpropagation phase
+    currentNode.backpropagate(reward)
 }
 
 // runMonteCarloSimulation performs a random playout from the given game state
@@ -108,14 +189,10 @@ TC KH 6D 4S 6H KD
 	fmt.Println("\nSimulations:\n")
 	
 	// Run a few simulations
-	for i := 0; i < 20; i++ {
-		reward, moves := runMonteCarloSimulation(game)
-		fmt.Printf("Reward: %.2f (%.0f cards in foundation) [%d moves]\n", reward, reward*52, len(moves))
-		
-		// Print first few moves
-		// fmt.Println("First few moves:")
-		// for j := 0; j < min(3, len(moves)); j++ {
-		// 	fmt.Printf("  %d: %s\n", j, moves[j])
-		// }
+	rootNode := NewMCTSNode(game.Hash(), nil)
+	for i := 0; i < 2000; i++ {
+		runMCTS(game, rootNode)
+		reward := rootNode.TotalReward / float64(rootNode.Visits)
+		fmt.Printf("Reward: %.2f (%.0f cards in foundation)\n", reward, reward*52)
 	}
 }
