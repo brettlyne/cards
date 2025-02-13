@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"strings"
 	"time"
 )
 
@@ -93,19 +94,92 @@ func (g *StreetsGame) Reset() {
 	}
 }
 
-// Print current game state
-func (g *StreetsGame) Print() {
-	fmt.Println("―――――――――――――――――――――――――――――――――")
+// ToString converts the game state to a string representation
+func (g *StreetsGame) ToString() string {
+	var result strings.Builder
+	
 	for row := 0; row < 8; row++ {
-		fmt.Printf("row %d: ", row)
+		if row > 0 {
+			result.WriteString("\n")
+		}
+		
+		firstCard := true
 		for col := 0; col < 19; col++ {
 			card := g.Rows[row][col]
 			if (card != Card{}) {
-				fmt.Printf("%s ", card.String())
+				if !firstCard {
+					result.WriteString(" ")
+				}
+				result.WriteString(card.String())
+				firstCard = false
 			}
 		}
-		fmt.Println()
 	}
+	
+	return result.String()
+}
+
+// FromString reconstructs a game state from its string representation
+func (g *StreetsGame) FromString(s string) error {
+	// Clear current state
+	g.Rows = [8][19]Card{}
+	
+	rows := strings.Split(s, "\n")
+	if len(rows) > 8 {
+		return fmt.Errorf("too many rows: %d", len(rows))
+	}
+	
+	for rowNum, row := range rows {
+		if len(strings.TrimSpace(row)) == 0 {
+			continue
+		}
+		
+		cards := strings.Fields(row)
+		if len(cards) > 19 {
+			return fmt.Errorf("too many cards in row %d: %d", rowNum, len(cards))
+		}
+		
+		for colNum, cardStr := range cards {
+			if len(cardStr) != 2 {
+				return fmt.Errorf("invalid card format at row %d, col %d: %s", rowNum, colNum, cardStr)
+			}
+			
+			// Parse value
+			var value int
+			switch cardStr[0] {
+			case 'A':
+				value = 1
+			case 'T':
+				value = 10
+			case 'J':
+				value = 11
+			case 'Q':
+				value = 12
+			case 'K':
+				value = 13
+			default:
+				if cardStr[0] < '2' || cardStr[0] > '9' {
+					return fmt.Errorf("invalid card value at row %d, col %d: %s", rowNum, colNum, cardStr)
+				}
+				value = int(cardStr[0] - '0')
+			}
+			
+			// Parse suit
+			suit := string(cardStr[1])
+			if suit != "H" && suit != "D" && suit != "C" && suit != "S" {
+				return fmt.Errorf("invalid suit at row %d, col %d: %s", rowNum, colNum, cardStr)
+			}
+			
+			g.Rows[rowNum][colNum] = Card{Value: value, Suit: suit}
+		}
+	}
+	
+	return nil
+}
+
+// Print displays the current game state
+func (g *StreetsGame) Print() {
+	fmt.Println(g.ToString())
 }
 
 // Get row length (number of non-empty cards)
@@ -329,12 +403,7 @@ func (g *StreetsGame) FromHash(hash string) error {
 }
 
 // Equals compares this game state with another game state
-func (g *StreetsGame) Equals(other *StreetsGame) bool {
-	// Both games must be non-nil
-	if other == nil {
-		return false
-	}
-	
+func (g StreetsGame) Equals(other StreetsGame) bool {
 	// First normalize both states
 	g.NormalizeRows()
 	other.NormalizeRows()
@@ -351,18 +420,48 @@ func (g *StreetsGame) Equals(other *StreetsGame) bool {
 	return true
 }
 
+const (
+	// Foundation represents moving a card to the foundation
+	Foundation = -1
+)
+// move = Move{From: 2, To: Foundation}  // Move from row 2 to foundation
+// Move represents moving a card from one row to another
+// If To is Foundation, the card is moved to the foundation
+type Move struct {
+	From int
+	To   int
+}
+
+
+
 func main() {
-	var game StreetsGame
-	game.Reset()
+	example := `TS 8D 6C 9S 2H 2C 3H
+9D TH QC 5C AC 7D 5D
+5S QS 4C 3D KS 7C AH
+8S KC JS JC 2D 9C QD
+5H 7S TD 6S AD 4H
+TC KH 6D 4S 6H KD
+3S 7H AS 2S 8C 4D
+3C 9H JD 8H JH QH`
 	
-	fmt.Println("Game state:")
+	var game StreetsGame
+	if err := game.FromString(example); err != nil {
+		fmt.Printf("Error parsing game: %v\n", err)
+		return
+	}
+	
+	fmt.Println("Original game:")
 	game.Print()
 	
+	fmt.Println("\nRoundtrip from string test:")
+	fmt.Println("game.ToString() == example:", game.ToString() == example)
+
+	fmt.Println("\nRoundtrip from hash test:")
 	hash := game.Hash()
-	fmt.Printf("\nHash length: %d bytes\n", len(hash))
-
-	var game2 StreetsGame
-	game2.FromHash(hash)
-	game2.Print()
-
+	var gameTwo StreetsGame
+	if err := gameTwo.FromHash(hash); err != nil {
+		fmt.Printf("Error parsing game: %v\n", err)
+		return
+	}
+	fmt.Println("game.Equals(gameTwo):", game.Equals(gameTwo))
 }
