@@ -167,6 +167,22 @@ func min(a, b int) int {
 	return b
 }
 
+// getBestMove returns the move with the highest visit count and its statistics
+func (n *MCTSNode) getBestMove() (Move, float64) {
+    bestVisits := -1
+    var bestMove Move
+    bestReward := -1.0
+    
+    for move, child := range n.Children {
+        if child.Visits > bestVisits {
+            bestVisits = child.Visits
+            bestMove = move
+            bestReward = child.TotalReward / float64(child.Visits)
+        }
+    }
+    return bestMove, bestReward
+}
+
 func main() {
 	example := `TS 8D 6C 9S 2H 2C 3H
 9D TH QC 5C AC 7D 5D
@@ -185,14 +201,47 @@ TC KH 6D 4S 6H KD
 	
 	fmt.Println("Initial state:")
 	game.Print()
-	fmt.Printf("Cards in rows: %d\n", game.CountCardsInRows())
-	fmt.Println("\nSimulations:\n")
 	
-	// Run a few simulations
-	rootNode := NewMCTSNode(game.Hash(), nil)
-	for i := 0; i < 2000; i++ {
-		runMCTS(game, rootNode)
-		reward := rootNode.TotalReward / float64(rootNode.Visits)
-		fmt.Printf("Reward: %.2f (%.0f cards in foundation)\n", reward, reward*52)
+	currentState := game
+	bestOverallReward := 0.0
+	
+	// Play through the game making best moves found by MCTS
+	for moveNum := 0; moveNum < 200; moveNum++ {
+		rootNode := NewMCTSNode(currentState.Hash(), nil)
+		
+		// Run MCTS iterations
+		for i := 0; i < 400; i++ {
+			runMCTS(currentState, rootNode)
+		}
+		
+		// Get statistics about all possible moves
+		fmt.Printf("\nMove %d - Analysis (Cards in rows: %d):\n", moveNum, currentState.CountCardsInRows())
+		for move, child := range rootNode.Children {
+			reward := child.TotalReward / float64(child.Visits)
+			if reward > bestOverallReward {
+				bestOverallReward = reward
+			}
+			fmt.Printf("  Move %s: visits=%d reward=%.2f\n", move, child.Visits, reward)
+		}
+		
+		// Make the best move
+		bestMove, bestReward := rootNode.getBestMove()
+		if bestMove == (Move{}) {
+			fmt.Println("No moves available")
+			break
+		}
+		
+		fmt.Printf("\nChosen move: %s (reward=%.2f)\n", bestMove, bestReward)
+		nextState, _ := currentState.applyMove(bestMove)
+		currentState = nextState
+		
+		// Print current state every 10 moves
+		if moveNum % 10 == 0 {
+			fmt.Println("\nCurrent state:")
+			currentState.Print()
+		}
 	}
+	
+	fmt.Printf("\nBest reward found in any position: %.2f (%.0f cards in foundation)\n", 
+        bestOverallReward, bestOverallReward*52)
 }
