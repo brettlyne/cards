@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"math"
 	"math/rand"
+	"os"
+	"time"
 )
 
 const (
@@ -193,64 +195,71 @@ func (n *MCTSNode) getBestMove() (Move, float64) {
 }
 
 func main() {
-	example := `TS 8D 6C 9S 2H 2C 3H
-9D TH QC 5C AC 7D 5D
-5S QS 4C 3D KS 7C AH
-8S KC JS JC 2D 9C QD
-5H 7S TD 6S AD 4H
-TC KH 6D 4S 6H KD
-3S 7H AS 2S 8C 4D
-3C 9H JD 8H JH QH`
-	
-	var game StreetsGame
-	if err := game.FromString(example); err != nil {
-		fmt.Printf("Error parsing game: %v\n", err)
-		return
-	}
-	
-	fmt.Println("Initial state:")
-	game.Print()
-	
-	currentState := game
-	bestOverallReward := 0.0
-	
-	// Play through the game making best moves found by MCTS
-	for moveNum := 0; moveNum < 200; moveNum++ {
-		rootNode := NewMCTSNode(currentState.Hash(), nil)
-		
-		// Run MCTS iterations
-		for i := 0; i < 400; i++ {
-			runMCTS(currentState, rootNode)
-		}
-		
-		// Get statistics about all possible moves
-		fmt.Printf("\nMove %d - Analysis (Cards in rows: %d):\n", moveNum, currentState.CountCardsInRows())
-		for move, child := range rootNode.Children {
-			reward := child.TotalReward / float64(child.Visits)
-			if reward > bestOverallReward {
-				bestOverallReward = reward
-			}
-			fmt.Printf("  Move %s: visits=%d reward=%.2f\n", move, child.Visits, reward)
-		}
-		
-		// Make the best move
-		bestMove, bestReward := rootNode.getBestMove()
-		if bestMove == (Move{}) {
-			fmt.Println("No moves available")
-			break
-		}
-		
-		fmt.Printf("\nChosen move: %s (reward=%.2f)\n", bestMove, bestReward)
-		nextState, _ := currentState.applyMove(bestMove)
-		currentState = nextState
-		
-		// Print current state every 10 moves
-		if moveNum % 10 == 0 {
-			fmt.Println("\nCurrent state:")
-			currentState.Print()
-		}
-	}
-	
-	fmt.Printf("\nBest reward found in any position: %.2f (%.0f cards in foundation)\n", 
-        bestOverallReward, bestOverallReward*52)
+    // Set up logging
+    logFile, err := os.OpenFile("solitaire_results.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+    if err != nil {
+        fmt.Printf("Error opening log file: %v\n", err)
+        return
+    }
+    defer logFile.Close()
+
+    // Set random seed
+    rand.Seed(time.Now().UnixNano())
+
+    // Number of games to try
+    numGames := 1000
+
+    fmt.Printf("Running %d games...\n", numGames)
+    
+    for gameNum := 0; gameNum < numGames; gameNum++ {
+        // Generate a new random game
+        var game StreetsGame
+        game.Reset()
+        
+        // Get the initial state as string for logging
+        initialState := game.ToString()
+        
+        currentState := game
+        bestOverallReward := 0.0
+        
+        // Play through the game
+        for moveNum := 0; moveNum < 250; moveNum++ {
+            rootNode := NewMCTSNode(currentState.Hash(), nil)
+            
+            // Run MCTS iterations
+            for i := 0; i < 400; i++ {
+                runMCTS(currentState, rootNode)
+            }
+            
+            // Make the best move
+            bestMove, bestReward := rootNode.getBestMove()
+            if bestMove == (Move{}) {
+                break
+            }
+            
+            nextState, _ := currentState.applyMove(bestMove)
+            currentState = nextState
+            
+            if bestReward > bestOverallReward {
+                bestOverallReward = bestReward
+            }
+        }
+        
+        // Log the results
+        cardsInRows := currentState.CountCardsInRows()
+        cardsInFoundation := 52 - cardsInRows
+        result := fmt.Sprintf("\nGame %d:\n%s\nCards in Foundation: %d\nWinnable: %v\n", 
+            gameNum+1, initialState, cardsInFoundation, cardsInFoundation == 52)
+        
+        if _, err := logFile.WriteString(result); err != nil {
+            fmt.Printf("Error writing to log: %v\n", err)
+        }
+        
+        // Print progress
+        if (gameNum+1) % 10 == 0 {
+            fmt.Printf("Completed %d games\n", gameNum+1)
+        }
+    }
+    
+    fmt.Println("Done! Results have been written to solitaire_results.log")
 }
