@@ -5,7 +5,7 @@ import (
 	"math"
 	"math/rand"
 	"os"
-	"time"
+	"strings"
 )
 
 const (
@@ -195,32 +195,47 @@ func (n *MCTSNode) getBestMove() (Move, float64) {
 }
 
 func main() {
+    // Read the input file
+    content, err := os.ReadFile("winnable_games.txt")
+    if err != nil {
+        fmt.Printf("Error reading input file: %v\n", err)
+        return
+    }
+    fmt.Printf("Read %d bytes from input file\n", len(content))
+
     // Set up logging
-    logFile, err := os.OpenFile("solitaire_results.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+    logFile, err := os.OpenFile("winnable_games_moves.log", os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
     if err != nil {
         fmt.Printf("Error opening log file: %v\n", err)
         return
     }
     defer logFile.Close()
 
-    // Set random seed
-    rand.Seed(time.Now().UnixNano())
+    // Split content into games (separated by blank lines)
+    games := strings.Split(string(content), "\n\n")
+    fmt.Printf("Found %d games to analyze\n", len(games))
 
-    // Number of games to try
-    numGames := 1000
+    for gameNum, gameStr := range games {
+        // Skip empty games
+        gameStr = strings.TrimSpace(gameStr)
+        if gameStr == "" {
+            fmt.Printf("Skipping empty game %d\n", gameNum+1)
+            continue
+        }
 
-    fmt.Printf("Running %d games...\n", numGames)
-    
-    for gameNum := 0; gameNum < numGames; gameNum++ {
-        // Generate a new random game
+        fmt.Printf("\nProcessing game %d (%d lines):\n", gameNum+1, len(strings.Split(gameStr, "\n")))
+        fmt.Println(gameStr)
+
+        // Parse the game
         var game StreetsGame
-        game.Reset()
-        
-        // Get the initial state as string for logging
-        initialState := game.ToString()
-        
+        if err := game.FromString(gameStr); err != nil {
+            fmt.Printf("Error parsing game %d: %v\n", gameNum+1, err)
+            continue
+        }
+
+        // Start solving the game
         currentState := game
-        bestOverallReward := 0.0
+        var moves []Move
         
         // Play through the game
         for moveNum := 0; moveNum < 250; moveNum++ {
@@ -232,34 +247,41 @@ func main() {
             }
             
             // Make the best move
-            bestMove, bestReward := rootNode.getBestMove()
+            bestMove, _ := rootNode.getBestMove()
             if bestMove == (Move{}) {
+                fmt.Printf("No more moves available after %d moves\n", moveNum)
                 break
             }
             
+            // Record the move
+            moves = append(moves, bestMove)
+            
+            // Apply the move
             nextState, _ := currentState.applyMove(bestMove)
             currentState = nextState
-            
-            if bestReward > bestOverallReward {
-                bestOverallReward = bestReward
+
+            // Print progress every 50 moves
+            if moveNum % 50 == 0 {
+                fmt.Printf("  Made %d moves, cards in rows: %d\n", moveNum, currentState.CountCardsInRows())
             }
         }
-        
-        // Log the results
-        cardsInRows := currentState.CountCardsInRows()
-        cardsInFoundation := 52 - cardsInRows
-        result := fmt.Sprintf("\nGame %d:\n%s\nCards in Foundation: %d\nWinnable: %v\n", 
-            gameNum+1, initialState, cardsInFoundation, cardsInFoundation == 52)
-        
+
+        // Log the game and its moves
+        result := gameStr + "\nmoves: ["
+        for i, move := range moves {
+            if i > 0 {
+                result += ","
+            }
+            result += fmt.Sprintf("[%d,%d]", move.From, move.To)
+        }
+        result += "]\n\n"
+
         if _, err := logFile.WriteString(result); err != nil {
             fmt.Printf("Error writing to log: %v\n", err)
         }
-        
-        // Print progress
-        if (gameNum+1) % 10 == 0 {
-            fmt.Printf("Completed %d games\n", gameNum+1)
-        }
+
+        fmt.Printf("Completed game %d with %d moves\n", gameNum+1, len(moves))
     }
     
-    fmt.Println("Done! Results have been written to solitaire_results.log")
+    fmt.Println("Done! Results have been written to winnable_games_moves.log")
 }
