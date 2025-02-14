@@ -12,7 +12,8 @@ const (
 	maxRolloutLength = 150 // Maximum number of moves in a simulation
 	// explorationConstant = 1.414 // sqrt(2)
 	// √2 is derived from the multi-armed bandit problem
-	explorationConstant = 1.0
+	explorationConstant = 1.8
+	iterationsPerMove  = 400 // Number of MCTS iterations to run per move
 )
 
 // MCTSNode represents a node in the Monte Carlo Tree Search
@@ -143,13 +144,13 @@ func runMonteCarloSimulation(gameState StreetsGame, pathStates map[string]bool) 
         validMoves := make([]Move, 0)
         for _, move := range legalMoves {
             nextState, _ := currentState.applyMove(move)
-            if !seenStates[nextState.Hash()] {
+            if !seenStates[nextState.Hash()] {  
                 validMoves = append(validMoves, move)
             }
         }
 
         if len(validMoves) == 0 {
-            // No more valid moves possible, evaluate position
+            // All moves lead to previously seen states, evaluate position
             cardsInRows := currentState.CountCardsInRows()
             cardsInFoundation := 52 - cardsInRows
             return float64(cardsInFoundation) / 52.0, moveHistory
@@ -165,12 +166,11 @@ func runMonteCarloSimulation(gameState StreetsGame, pathStates map[string]bool) 
         // Update current state
         currentState = newState
         moveHistory = append(moveHistory, move)
-    }
-    
+    }    
     // Reached move limit, evaluate final position
     cardsInRows := currentState.CountCardsInRows()
     cardsInFoundation := 52 - cardsInRows
-    return float64(cardsInFoundation) / 52.0, moveHistory
+    return float64(cardsInFoundation + 1) / 52.0, moveHistory //small bonus for reaching move limit
 }
 
 // getBestMove returns the move with the highest visit count and its statistics
@@ -244,7 +244,7 @@ func main() {
             rootNode := NewMCTSNode(currentState.Hash(), nil)
             
             // Run MCTS iterations
-            for i := 0; i < 400; i++ {
+            for i := 0; i < iterationsPerMove; i++ {
                 runMCTS(currentState, rootNode)
             }
             
