@@ -7,8 +7,10 @@ import (
 )
 
 const (
-	maxRolloutLength = 300 // Maximum number of moves in a simulation
-	explorationConstant = 1.414 // sqrt(2)
+	maxRolloutLength = 150 // Maximum number of moves in a simulation
+	// explorationConstant = 1.414 // sqrt(2)
+	// √2 is derived from the multi-armed bandit problem
+	explorationConstant = 1.0
 )
 
 // MCTSNode represents a node in the Monte Carlo Tree Search
@@ -86,11 +88,17 @@ func runMCTS(rootState StreetsGame, rootNode *MCTSNode) {
     currentNode := rootNode
     currentState := rootState.Clone()
     var move Move
+    
+    // Track only states in our actual path through the tree
+    pathStates := make(map[string]bool)
+    pathStates[currentState.Hash()] = true
 
-    for len(currentNode.Children) > 0 {
+    // Selection phase
+    for len(currentNode.Children) > 0 { // while there are children to visit
         currentNode, move = currentNode.selectChild()
         nextState, _ := currentState.applyMove(move)
         currentState = nextState
+        pathStates[currentState.Hash()] = true
     }
 
     // Expansion phase - if node has been visited before, expand it
@@ -100,11 +108,12 @@ func runMCTS(rootState StreetsGame, rootNode *MCTSNode) {
             currentNode, move = currentNode.selectChild()
             nextState, _ := currentState.applyMove(move)
             currentState = nextState
+            pathStates[currentState.Hash()] = true
         }
     }
 
-    // Simulation phase
-    reward, _ := runMonteCarloSimulation(currentState)
+    // Simulation phase - now each simulation starts fresh with just the path states
+    reward, _ := runMonteCarloSimulation(currentState, pathStates)
 
     // Backpropagation phase
     currentNode.backpropagate(reward)
@@ -112,59 +121,54 @@ func runMCTS(rootState StreetsGame, rootNode *MCTSNode) {
 
 // runMonteCarloSimulation performs a random playout from the given game state
 // Returns a reward (0-1) and the sequence of moves played
-func runMonteCarloSimulation(gameState StreetsGame) (float64, []Move) {
-	// Make a copy of the game state to modify
-	currentState := gameState.Clone()
-	moveHistory := make([]Move, 0)
-	
-	// Keep track of seen states
-	seenStates := make(map[string]bool)
-	seenStates[currentState.Hash()] = true
-	
-	// Run simulation until we hit max moves or no legal moves remain
-	for moveCount := 0; moveCount < maxRolloutLength; moveCount++ {
-		// Get legal moves
-		legalMoves := currentState.generateLegalMoves()
+func runMonteCarloSimulation(gameState StreetsGame, pathStates map[string]bool) (float64, []Move) {
+    // Make a copy of the game state to modify
+    currentState := gameState.Clone()
+    moveHistory := make([]Move, 0)
+    
+    // Make a local copy of seen states just for this simulation
+    seenStates := make(map[string]bool)
+    for state := range pathStates {
+        seenStates[state] = true
+    }
+    
+    // Run simulation until we hit max moves or no legal moves remain
+    for moveCount := 0; moveCount < maxRolloutLength; moveCount++ {
+        // Get legal moves
+        legalMoves := currentState.generateLegalMoves()
 
-		// Filter out moves that lead to previously seen states
-		validMoves := make([]Move, 0)
-		for _, move := range legalMoves {
-				nextState, _ := currentState.applyMove(move)
-				if !seenStates[nextState.Hash()] {
-						validMoves = append(validMoves, move)
-				}
-		}
+        // Filter out moves that lead to previously seen states
+        validMoves := make([]Move, 0)
+        for _, move := range legalMoves {
+            nextState, _ := currentState.applyMove(move)
+            if !seenStates[nextState.Hash()] {
+                validMoves = append(validMoves, move)
+            }
+        }
 
-		if len(legalMoves) == 0 {
-			// No more moves possible, evaluate position
-			cardsInRows := currentState.CountCardsInRows()
-			cardsInFoundation := 52 - cardsInRows
-			return float64(cardsInFoundation) / 52.0, moveHistory
-		}
-		
-		// Choose random move
-		move := legalMoves[rand.Intn(len(legalMoves))]
+        if len(validMoves) == 0 {
+            // No more valid moves possible, evaluate position
+            cardsInRows := currentState.CountCardsInRows()
+            cardsInFoundation := 52 - cardsInRows
+            return float64(cardsInFoundation) / 52.0, moveHistory
+        }
+        
+        // Choose random move from valid moves
+        move := validMoves[rand.Intn(len(validMoves))]
 
-		// Apply move
-		newState, _ := currentState.applyMove(move)
-		seenStates[newState.Hash()] = true
+        // Apply move
+        newState, _ := currentState.applyMove(move)
+        seenStates[newState.Hash()] = true  // Only track in local simulation
 
-		// Update current state
-		currentState = newState
-		moveHistory = append(moveHistory, move)
-	}
-	
-	// Reached move limit, evaluate final position
-	cardsInRows := currentState.CountCardsInRows()
-	cardsInFoundation := 52 - cardsInRows
-	return float64(cardsInFoundation) / 52.0, moveHistory
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
+        // Update current state
+        currentState = newState
+        moveHistory = append(moveHistory, move)
+    }
+    
+    // Reached move limit, evaluate final position
+    cardsInRows := currentState.CountCardsInRows()
+    cardsInFoundation := 52 - cardsInRows
+    return float64(cardsInFoundation) / 52.0, moveHistory
 }
 
 // getBestMove returns the move with the highest visit count and its statistics
@@ -174,10 +178,15 @@ func (n *MCTSNode) getBestMove() (Move, float64) {
     bestReward := -1.0
     
     for move, child := range n.Children {
+        // If we find a perfect foundation move, return it immediately
+        reward := child.TotalReward / float64(child.Visits)
+        if reward == 1.0 && move.To == Foundation {
+            return move, reward
+        }
         if child.Visits > bestVisits {
             bestVisits = child.Visits
             bestMove = move
-            bestReward = child.TotalReward / float64(child.Visits)
+            bestReward = reward
         }
     }
     return bestMove, bestReward
