@@ -196,7 +196,7 @@ func (n *MCTSNode) getBestMove() (Move, float64) {
 
 func main() {
     // Read the input file
-    content, err := os.ReadFile("winnable_games.txt")
+    content, err := os.ReadFile("winnable_games_fixed.txt")
     if err != nil {
         fmt.Printf("Error reading input file: %v\n", err)
         return
@@ -212,7 +212,9 @@ func main() {
     defer logFile.Close()
 
     // Split content into games (separated by blank lines)
-    games := strings.Split(string(content), "\n\n")
+    // First normalize line endings
+    normalizedContent := strings.ReplaceAll(string(content), "\r\n", "\n")
+    games := strings.Split(normalizedContent, "\n\n")
     fmt.Printf("Found %d games to analyze\n", len(games))
 
     for gameNum, gameStr := range games {

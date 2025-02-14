@@ -124,7 +124,8 @@ func (g *StreetsGame) FromString(s string) error {
 	// Clear current state
 	g.Rows = [8][19]Card{}
 	
-	rows := strings.Split(s, "\n")
+	// Split into rows, handling both Unix and Windows line endings
+	rows := strings.Split(strings.ReplaceAll(s, "\r\n", "\n"), "\n")
 	if len(rows) > 8 {
 		return fmt.Errorf("too many rows: %d", len(rows))
 	}
