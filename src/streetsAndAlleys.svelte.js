@@ -1,5 +1,4 @@
 import { cardDeck, shuffle } from "./utils/utils";
-import { state } from "svelte";
 
 const cardValues = {
   A: 1,
@@ -52,7 +51,7 @@ function dealStreetsAlleys(deck) {
   return result;
 }
 
-export const streets = state({
+export const streets = $state({
   rows: [],
   foundations: [],
 });
